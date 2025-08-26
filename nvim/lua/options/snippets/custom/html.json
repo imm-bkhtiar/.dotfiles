@@ -1,0 +1,12 @@
+{
+  "HTML Label with Input": {
+    "prefix": "inla",
+    "body": [
+      "<label>",
+      "\t<p>${3:Label Text}</p>",
+      "\t<input type=\"${1:text}\" name=\"${2:name}\" />",
+      "</label>${4}"
+    ],
+    "description": "Create a label with a paragraph and input inside."
+  }
+}

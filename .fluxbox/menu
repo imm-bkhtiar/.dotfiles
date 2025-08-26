@@ -1,0 +1,10 @@
+[begin] (fluxbox)
+[restart] (Restart)
+[separator]
+[submenu] (Power)
+  [exit] (Exit)
+  [exec] (Reboot) {systemctl reboot}
+  [exec] (Shutdown!) {systemctl poweroff} </home/immbkhtiar/[BAKHTIAR]/design/result/Vim_icon.png>
+[end]
+
+[end]

@@ -1,0 +1,13 @@
+{
+	"name": "example-snippets",
+	"contributes": {
+		"snippets": [
+			{
+				"language": [
+					"html", "php"
+				],
+				"path": "./custom/html.json"
+			}
+    ]
+	}
+}
