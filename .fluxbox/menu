@@ -4,7 +4,7 @@
 [submenu] (Power)
   [exit] (Exit)
   [exec] (Reboot) {systemctl reboot}
-  [exec] (Shutdown!) {systemctl poweroff} </home/immbkhtiar/[BAKHTIAR]/design/result/Vim_icon.png>
+  [exec] (Shutdown!) {systemctl poweroff}
 [end]
 
 [end]
