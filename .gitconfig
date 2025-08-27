@@ -1,3 +1,5 @@
 [user]
 	email = 156558879+imm-bkhtiar@users.noreply.github.com 
 	name = imm-bkhtiar
+[credential]
+	helper = store
