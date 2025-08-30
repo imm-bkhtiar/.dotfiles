@@ -34,7 +34,7 @@ vim.opt.si = true -- Smart indent
 vim.opt.breakindent = true
 vim.opt.laststatus = 3
 vim.opt.expandtab = true
-vim.opt.shell = 'bash'
+vim.opt.shell = '/bin/zsh'
 vim.opt.backupskip = '/tmp/*,/private/tmp/*'
 vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true
@@ -80,9 +80,9 @@ vim.cmd([[
 ]])
 
 -- vim.cmd("set shell=cmd.exe")
-vim.cmd([[let &shell = executable('pwsh') ? 'pwsh' : 'powershell'
-		let &shellcmdflag = '-NoLogo -NonInteractive -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';$PSStyle.OutputRendering=''plaintext'';Remove-Alias -Force -ErrorAction SilentlyContinue tee;'
-		let &shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
-		let &shellpipe  = '2>&1 | %%{ "$_" } | tee %s; exit $LastExitCode'
-		set shellquote= shellxquote=
-]])
+-- vim.cmd([[let &shell = executable('pwsh') ? 'pwsh' : 'powershell'
+-- 		let &shellcmdflag = '-NoLogo -NonInteractive -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';$PSStyle.OutputRendering=''plaintext'';Remove-Alias -Force -ErrorAction SilentlyContinue tee;'
+-- 		let &shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
+-- 		let &shellpipe  = '2>&1 | %%{ "$_" } | tee %s; exit $LastExitCode'
+-- 		set shellquote= shellxquote=
+-- ]])

@@ -28,6 +28,15 @@ fi
 
 exec xfsettingsd &
 exec picom &
+exec thunar --daemon &
+exec dunst & 
+# exec /usr/libexec/gvfs-udisks2-volume-monitor &
+# exec /usr/libexec/gvfs-mtp-volume-monitor &
+# exec /usr/libexec/gvfs-goa-volume-monitor &
+# exec /usr/libexec/gvfs-gphoto2-volume-monitor &
+# exec /usr/libexec/gvfs-afc-volume-monitor &
+# exec /usr/libexec/gvfsd-metadata &
+# exec /usr/libexec/gvfsd-trash &
 # fbsetbg -f $HOME/[BAKHTIAR]/Photos/wallpaper/wallpaper11.png
 exec fluxbox
 

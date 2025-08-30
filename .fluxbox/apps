@@ -1,7 +1,13 @@
 [app] (name=fbrun)
-  [Position]	(CENTER)	{0 0}
+  [Position]	(center)	{0 0}
   [Layer]	{2}
 [end]
 [app] (name=obs) (class=obs)
   [Alpha]	{255}
+[end]
+[app] (name=kitty)
+  [Position]	(center) {0 0}
+  [Dimensions] {90% 90%}
+  [Layer]	{normal}
+  [Alpha] {230}
 [end]
