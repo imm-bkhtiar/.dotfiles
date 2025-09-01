@@ -187,12 +187,24 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   status_command i3status
+  # font pango:GeistMono Nerd Font 9.5 
   colors {
-    statusline #63445F 
-    focused_workspace #388B28 #388B28 #ffffff
-    inactive_workspace #388B28 #2D342C #ffffff
+    background #262c21 
+    statusline #5E9B2E 
+    focused_workspace #5E9B2E #5E9B2E #ffffff
+    inactive_workspace #5E9B2E #292E27 #ffffff
   }
 }
+
+client.focused   #5E9B2E #3D4934 #5E9B2E #5E9B2E #5E9B2E
+client.unfocused #3D4934 #5E9B2E #3D4934 #3D4934 #3D4934
+
+# gaps outer 5
+# gaps outer 5
+
+workspace 5 gaps vertical 50
+workspace 5 gaps horizontal 75
+workspace 5 gaps inner 5
 
 exec --no-startup-id xfsettingsd &
 exec --no-startup-id picom &
