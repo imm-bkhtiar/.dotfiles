@@ -86,17 +86,7 @@ bindsym $mod+Shift+l move right
 # bindsym $mod+Shift+Up move up
 # bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-# bindsym $mod+h split h
-
-# split in vertical orientation
-# bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# split in horizontal orientationg
 bindsym $mod+w layout tabbed
 # bindsym $mod+e layout toggle split
 
@@ -223,3 +213,6 @@ bindsym Mod1+m exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym Mod1+h exec pactl set-sink-volume @DEFAULT_SINK@ 50%
 bindsym Mod1+Left exec brightnessctl set 5%-
 bindsym Mod1+Right exec brightnessctl set 5%+
+
+# Floting window for spesific app
+for_window [class="Thunar"] floating enable

@@ -1,5 +1,5 @@
 # services
 
 # window manager
-exec startfluxbox
-# exec i3
+# exec startfluxbox
+exec i3
