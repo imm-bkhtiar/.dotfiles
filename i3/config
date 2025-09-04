@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:GeistMono Nerd Font 9.5
+font pango:GeistMono Nerd Font Bold 6 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -55,7 +55,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+Tab exec rofi -show drun 
+bindsym $mod+Tab exec rofi -show drun -disable-history
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -177,11 +177,11 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   status_command i3status
-  # font pango:GeistMono Nerd Font 9.5 
+  font pango:GeistMono Nerd Font 9
   colors {
     background #262c21 
     statusline #5E9B2E 
-    focused_workspace #5E9B2E #5E9B2E #ffffff
+    focused_workspace #395e1c #5E9B2E #ffffff
     inactive_workspace #5E9B2E #292E27 #ffffff
   }
 }
@@ -195,10 +195,16 @@ client.unfocused #3D4934 #5E9B2E #3D4934 #3D4934 #3D4934
 workspace 5 gaps vertical 50
 workspace 5 gaps horizontal 75
 workspace 5 gaps inner 5
+# default_border none
+# default_floating_border none
+# default_border pixel 0
+# default_floating_border pixel 0
+# hide_edge_borders smart
 
 exec --no-startup-id xfsettingsd &
 exec --no-startup-id picom &
 exec --no-startup-id dunst &
+exec --no-startup-id pulseaudio --start &
 exec_always --no-startup-id autotiling
 exec --no-startup-id feh --bg-fill "$HOME/[BAKHTIAR]/Photos/wallpaper/wallpaper11.png"
 
@@ -214,5 +220,10 @@ bindsym Mod1+h exec pactl set-sink-volume @DEFAULT_SINK@ 50%
 bindsym Mod1+Left exec brightnessctl set 5%-
 bindsym Mod1+Right exec brightnessctl set 5%+
 
-# Floting window for spesific app
+# Floting style for spesific app
 for_window [class="Thunar"] floating enable
+for_window [class="org.nickvision.tubeconverter.gnome"] floating enable
+for_window [class="obs"] floating enable
+
+
+# for_window [class="^.*"] border pixel 1.5 

@@ -23,9 +23,12 @@ alias bakhtiar="cd $HOME/\[BAKHTIAR\]/source-code/"
 alias q="exit"
 alias x="clear"
 alias la="ls -a"
-alias ss="$HOME/\[BAKHTIAR\]/Apps/portable/flameshot"
-alias obs="flatpak run  com.obsproject.Studio"
+alias ss="flameshot"
 alias update="sudo apt update && sudo apt upgrade"
+
+alias shutdown="systemctl poweroff"
+alias reboot="systemctl reboot"
+alias logout="i3-msg exit"
 
 # Promp
 
