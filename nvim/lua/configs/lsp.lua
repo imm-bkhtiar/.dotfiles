@@ -69,5 +69,5 @@ lspconfig.intelephense.setup({
 })
 
 lspconfig.emmet_ls.setup({
-  filetypes = { "html" , "php.html"}
+  filetypes = { "html" , "php.html"},
 })
