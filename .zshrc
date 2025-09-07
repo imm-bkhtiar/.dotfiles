@@ -4,6 +4,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ENABLE_CORRECTION="true"
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # ZSH_THEME="robbyrussell"
 
@@ -16,13 +17,20 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+#ls settings
+eval "$(dircolors -b $HOME/.dircolors)"
+alias la="ls -a"
+alias ls="ls --color=auto"
+alias ll="ls -l"
+
+#rm settings
+alias rm="rm -I"
 
 # Alias Section
 alias music="TERM=xterm-256color musikcube"
 alias bakhtiar="cd $HOME/\[BAKHTIAR\]/source-code/"
 alias q="exit"
 alias x="clear"
-alias la="ls -a"
 alias ss="flameshot"
 alias update="sudo apt update && sudo apt upgrade"
 
