@@ -54,7 +54,7 @@ alias logout="i3-msg exit"
 #   }
 # } 
 
-PROMPT="%F{#dffffe}┌[ %F{#fc5e19}%B%D|%t%F{white} - %F{#fefe27}%2~ %F{white}- %F{#383743}%j%F{#dffffe}]
+PROMPT="%F{#dffffe}┌[ %F{#fc5e19}%B%D |%t%F{white} - %F{#fefe27}%2~ %F{white}- %F{#383743}%j%F{#dffffe}]
 %F{#dffffe}└> " 
 
 # Custom Function

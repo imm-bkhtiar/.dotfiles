@@ -1,7 +1,7 @@
 -- Definisi warna
-vim.api.nvim_set_hl(0, "StatusModeN", {fg='#252525', bg='#d6ad5c', bold = true}) -- NORMAL
-vim.api.nvim_set_hl(0, "StatusModeI", {fg='#7D799E' , bold = true}) -- INSERT
-vim.api.nvim_set_hl(0, "StatusGit", { fg="#7E5871", bold = true})     -- Git branch
+vim.api.nvim_set_hl(0, "StatusModeN", {fg='#252525', bg='#5E9B2E', bold = true}) -- NORMAL
+vim.api.nvim_set_hl(0, "StatusModeI", {fg='#3D4934' , bold = true}) -- INSERT
+vim.api.nvim_set_hl(0, "StatusGit", { fg="#4e3c49", bold = true})     -- Git branch
 vim.api.nvim_set_hl(0, "StatusNC", {bg="NONE", fg="NONE"})  -- Jam
 
 -- Fungsi untuk mendapatkan mode dengan warna

@@ -194,10 +194,11 @@ bar {
 }
 
 client.focused   #5E9B2E #3D4934 #5E9B2E #5E9B2E #5E9B2E
+# client.focused #3D4934 #5E9B2E #3D4934 #3D4934 #3D4934
 client.unfocused #3D4934 #5E9B2E #3D4934 #3D4934 #3D4934
 
 # gaps outer 5
-# gaps outer 5
+# gaps inner 5
 
 workspace 5 gaps vertical 50
 workspace 5 gaps horizontal 75

@@ -37,9 +37,11 @@ require('blink.cmp').setup({
       auto_brackets = { enabled = true, },
     },
     menu = {
-      border = "rounded",
-      winblend = 10,
+      border = "single",
+      winblend = 0,
       draw = {
+        padding = 1,
+        gap = 2,
         treesitter = { "lsp" },
         components = {
           kind_icon = {
@@ -71,8 +73,8 @@ require('blink.cmp').setup({
   documentation = {
       auto_show = true,
       window = {
-        border = 'rounded',
-        winblend = 10,
+        border = 'single',
+        winblend = 0,
       }
     }
   },
@@ -80,8 +82,8 @@ require('blink.cmp').setup({
   signature = {
     enabled = true,
     window = {
-      border = "rounded",
-      winblend = 10,
+      border = "single",
+      winblend = 0,
     },
   },
 
