@@ -29,7 +29,7 @@ window {
   border: 1px;
   border-color: #5E9B2E;
   background-color: rgba(0,0,0,0);
-  background-image: url("/home/immbkhtiar/[BAKHTIAR]/Photos/wallpaper/wallpaper11v2.png", both);
+  background-image: url("/home/immbkhtiar/BAKHTIAR/Photos/wallpaper/wallpaper11v2.png", both);
   padding: 125 0 0;
 }
 

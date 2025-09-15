@@ -1,16 +1,17 @@
 # Created by newuser for 5.9
-# Default Settings
-export ZSH="$HOME/.oh-my-zsh"
+# Default Settings export ZSH="$HOME/.oh-my-zsh"
 # source $ZSH/oh-my-zsh.sh
+export ZSH="$HOME/.oh-my-zsh"
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ENABLE_CORRECTION="true"
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ":completion:*" matcher-list "m:{a-zA-Z}={A-Za-z}"
 
 # ZSH_THEME="robbyrussell"
 
 plugins=(git zsh-syntax-highlighting)
 
 # Export section
+# export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:~/.local/kitty.app/bin"
 export NVM_DIR="$HOME/.nvm"
@@ -28,7 +29,7 @@ alias rm="rm -I"
 
 # Alias Section
 alias music="TERM=xterm-256color musikcube"
-alias bakhtiar="cd $HOME/\[BAKHTIAR\]/source-code/"
+alias bakhtiar="cd $HOME/BAKHTIAR/source-code/"
 alias q="exit"
 alias x="clear"
 alias ss="flameshot"
@@ -40,22 +41,30 @@ alias logout="i3-msg exit"
 
 # Promp
 
-# $normal = "\e[0m"                   # Reset
-# $white = "\e[1;37m"                 # white bold
-# $clock = "\e[38;2;205;215;155m"     # RGB 205,215,155
-# $path = "\e[38;2;230;180;90m"
-# $git = "\e[38;2;90;230;195m"
+# normal="%{\e[0m%}"                   # Reset
+# white="%{\e[1;37m%}"                 # white bold
+# clock="%{\e[38;2;205;215;155m%}"     # RGB 205,215,155
+# path="%{\e[38;2;230;180;90m%}"
+# git="%{\e[38;2;90;230;195m%}"
 
-# function Get-GitBranch {
-#   if (Test-Path ".git") {
-#     git branch --show-current 2>$null
-#   } else {
-#     return "!git"
-#   }
-# } 
+normal="%f%k"                     # reset warna
+white="%F{white}"                 # putih
+clock="%F{#cdd79b}"               # RGB 205,215,155
+dir="%F{#e6b45a}"                # RGB 230,180,90
+git="%F{#5ae6c3}"                 # RGB 90,230,195
+user="%F{#5E9B2E}"
 
-PROMPT="%F{#dffffe}┌[ %F{#fc5e19}%B%D |%t%F{white} - %F{#fefe27}%2~ %F{white}- %F{#383743}%j%F{#dffffe}]
-%F{#dffffe}└> " 
+function get_git_branch() {
+  if [ -d ".git" ]; then
+    git branch --show-current 2>/dev/null
+  else
+    echo ""
+  fi
+}
+
+setopt PROMPT_SUBST
+PS1="${white}┌[ ${clock}󰥔 %T ${white}][${user}  %n ${white}][ ${dir}  %~ ${white}][ ${git} \$(get_git_branch) ${white}]
+└> "
 
 # Custom Function
 
