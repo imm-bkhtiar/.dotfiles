@@ -203,6 +203,11 @@ client.unfocused #3D4934 #5E9B2E #3D4934 #3D4934 #3D4934
 workspace 5 gaps vertical 50
 workspace 5 gaps horizontal 75
 workspace 5 gaps inner 5
+
+workspace 9 gaps vertical 50
+workspace 9 gaps horizontal 75
+workspace 9 gaps inner 5
+
 # default_border none
 # default_floating_border none
 # default_border pixel 0
@@ -215,6 +220,10 @@ exec --no-startup-id dunst &
 exec --no-startup-id pulseaudio --start &
 exec_always --no-startup-id autotiling
 exec --no-startup-id feh --bg-fill "$HOME/BAKHTIAR/Photos/wallpaper/wallpaper11.png"
+
+exec --no-startup-id i3-msg "workspace 1;exec kitty" 
+exec --no-startup-id i3-msg "workspace 2;exec firefox" 
+exec --no-startup-id i3-msg "workspace 1" 
 
 bindsym $mod+e exec thunar
 bindsym $mod+b exec firefox
