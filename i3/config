@@ -176,6 +176,13 @@ bindsym $mod+f fullscreen toggle
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+# Color Settings
+set $color1           #5E9B2E
+set $color2           #3D4934
+set $white            #ffffff 
+set $background       #3D4934
+set $statuslinebg     #262c2100
+
 bar {
   status_command i3status
   position bottom 
@@ -186,16 +193,15 @@ bar {
   font pango:GeistMono Nerd Font 9
   tray_padding 4 
   colors {
-    background #262c2100
-    statusline #5E9B2E 
-    focused_workspace #395e1c #5E9B2E #ffffff
-    inactive_workspace #5E9B2E #292E27 #ffffff
+    background $statuslinebg
+    statusline $color1 
+    focused_workspace $color2 $color1 $white
+    inactive_workspace $color1 $color2 $white
   }
 }
 
-client.focused   #5E9B2E #3D4934 #5E9B2E #5E9B2E #5E9B2E
-# client.focused #3D4934 #5E9B2E #3D4934 #3D4934 #3D4934
-client.unfocused #3D4934 #5E9B2E #3D4934 #3D4934 #3D4934
+client.focused   $color1 $color2 $color1 $color1 $color1
+client.unfocused $color2 $color1 $color2 $color2 $color2
 
 # gaps outer 5
 # gaps inner 5
@@ -244,5 +250,4 @@ for_window [class="org.nickvision.tubeconverter.gnome"] floating enable
 for_window [class="obs"] floating enable
 for_window [class="Xarchiver"] floating enable
 
-
-# for_window [class="^.*"] border pixel 1.5 
+for_window [class="^.*"] border pixel 1.5 
