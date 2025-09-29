@@ -7,12 +7,14 @@ general {
 
 # order += "ipv6"
 order += "wireless _first_"
+order += "cpu_temperature 0"
+order += "cpu_usage"
+order += "memory"
 order += "volume master"
 # order += "ethernet _first_"
 order += "battery all"
 # order += "disk /"
 # order +<D-R> "load"
-order += "memory"
 order += "tztime local"
 
 wireless _first_ {
@@ -54,4 +56,13 @@ volume master {
   format = "[   %volume ]"
   format_muted = "♪: muted (%volume)"
   device = "pulse"
+}
+
+cpu_temperature 0{
+  format = "[  %degrees °C ]"
+  path = "/sys/class/thermal/thermal_zone0/temp"
+}
+
+cpu_usage {
+  format = "[   %usage ]"
 }

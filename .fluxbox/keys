@@ -144,5 +144,5 @@ Mod1 Left :Exec brightnessctl set 5%-
 Mod1 Right :Exec brightnessctl set 5%+
 
 Mod4 b :Exec firefox
-Mod4 Tab :Exec rofi -show drun
+Mod4 Tab :Exec rofi -show drun -disable-history 
 Mod4 Return :Exec kitty 
