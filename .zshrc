@@ -2,13 +2,22 @@
 # Default Settings export ZSH="$HOME/.oh-my-zsh"
 # source $ZSH/oh-my-zsh.sh
 export ZSH="$HOME/.oh-my-zsh"
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ENABLE_CORRECTION="true"
 zstyle ":completion:*" matcher-list "m:{a-zA-Z}={A-Za-z}"
 
 # ZSH_THEME="robbyrussell"
 
-plugins=(git zsh-syntax-highlighting)
+# ZSH Plugins
+plugins=(
+  git
+  zsh-syntax-highlighting
+  zsh-vi-mode
+  emoji
+  qrcode
+)
+source $ZSH/oh-my-zsh.sh
+unsetopt correct
+unsetopt correct_all
 
 # Export section
 # export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
@@ -50,10 +59,10 @@ alias logout="i3-msg exit"
 
 normal="%f%k"                     # reset warna
 white="%F{white}"                 # putih
-clock="%F{#cdd79b}"               # RGB 205,215,155
-dir="%F{#e6b45a}"                # RGB 230,180,90
-git="%F{#5ae6c3}"                 # RGB 90,230,195
-user="%F{#5E9B2E}"
+clock="%F{#475055}"               # RGB 205,215,155
+dir="%F{#E9AD6B}"                # RGB 230,180,90
+git="%F{#4D758E}"                 # RGB 90,230,195
+user="%F{#424334}"
 
 function get_git_branch() {
   if [ -d ".git" ]; then

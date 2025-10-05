@@ -87,14 +87,14 @@ bindsym $mod+Shift+l move right
 # bindsym $mod+Shift+Right move right
 
 # split in horizontal orientationg
-bindsym $mod+w layout tabbed
+# bindsym $mod+w layout tabbed
 # bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym Mod1+Tab focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -177,11 +177,17 @@ bindsym $mod+f fullscreen toggle
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # Color Settings
-set $color1           #5E9B2E
-set $color2           #3D4934
-set $white            #ffffff 
-set $background       #3D4934
-set $statuslinebg     #262c2100
+# set $color1           #5E9B2E
+# set $color2           #3D4934
+# set $white            #ffffff 
+# set $background       #3D4934
+# set $statuslinebg     #262c2100
+
+set $color1           #E9AD6B
+set $color2           #4D758E 
+set $white            #dddddd
+set $background       #475055 
+set $statuslinebg     #1b283180
 
 bar {
   status_command i3status
@@ -195,13 +201,15 @@ bar {
   colors {
     background $statuslinebg
     statusline $color1 
-    focused_workspace $color2 $color1 $white
-    inactive_workspace $color1 $color2 $white
+    focused_workspace $background $color1 $statuslinebg
+    inactive_workspace $background $statuslinebg $white
+    urgent_workspace $background @color2 $white
   }
 }
 
-client.focused   $color1 $color2 $color1 $color1 $color1
-client.unfocused $color2 $color1 $color2 $color2 $color2
+client.focused   $background $color2 $background $background $background
+client.unfocused $statuslinebg $statuslinebg $color2 $statuslinebg $statuslinebg
+client.focused_inactive $statuslinebg $statuslinebg $color2 $statuslinebg $statuslinebg
 
 # gaps outer 5
 # gaps inner 5
@@ -225,7 +233,8 @@ exec --no-startup-id picom &
 exec --no-startup-id dunst &
 exec --no-startup-id pulseaudio --start &
 exec_always --no-startup-id autotiling
-exec --no-startup-id feh --bg-fill "$HOME/BAKHTIAR/Photos/wallpaper/wallpaper11.png"
+# exec --no-startup-id feh --bg-fill "$HOME/BAKHTIAR/Photos/wallpaper/wallpaper11.png"
+exec --no-startup-id feh --bg-fill "$HOME/BAKHTIAR/Photos/wallpaper/wallpaper14.jpg"
 exec --no-startup-id exec brightnessctl set 40%
 
 exec --no-startup-id i3-msg "workspace 1;exec kitty" 
@@ -252,3 +261,7 @@ for_window [class="Xarchiver"] floating enable
 for_window [class="Gpick"] floating enable
 
 for_window [class="^.*"] border pixel 1.5 
+
+# Custom Keybind
+
+# bindsym Control+f exec cd $(find . -type d | fzf)
