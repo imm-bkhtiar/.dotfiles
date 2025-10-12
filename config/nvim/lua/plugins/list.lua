@@ -98,5 +98,5 @@ return {
       config = function ()
         require "configs.oilnvim"
       end
-  }
+  },
 }

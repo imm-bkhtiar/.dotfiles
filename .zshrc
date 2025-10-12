@@ -15,6 +15,7 @@ plugins=(
   emoji
   qrcode
 )
+
 source $ZSH/oh-my-zsh.sh
 unsetopt correct
 unsetopt correct_all

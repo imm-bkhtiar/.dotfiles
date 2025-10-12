@@ -259,6 +259,7 @@ for_window [class="org.nickvision.tubeconverter.gnome"] floating enable
 for_window [class="obs"] floating enable
 for_window [class="Xarchiver"] floating enable
 for_window [class="Gpick"] floating enable
+for_window [class="emoji_picker"] floating enable
 
 for_window [class="^.*"] border pixel 1.5 
 

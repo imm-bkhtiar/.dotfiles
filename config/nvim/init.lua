@@ -20,4 +20,3 @@ else
   local plugins = require("plugins.list")
   require("lazy").setup({plugins})
 end
-
