@@ -1,0 +1,96 @@
+[colors]
+background = #222222
+foreground = #ffffff
+primary    = #61afef
+secondary  = #98c379
+alert      = #e06c75
+
+[bar/main]
+width = 100%
+height = 26
+background = ${colors.background}
+foreground = ${colors.foreground}
+font-0 = "GeistMono Nerd Font:style=bold:size=9"
+
+modules-left  = workspace xwindow
+modules-right = wlan cpu temperature memory backlight volume date tray
+
+tray-position = right
+tray-padding = 2
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;; MODULES
+;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Workspaces (contoh i3)
+[module/workspaces]
+type = internal/xworkspaces
+label-focused = %name%
+enable-click = true
+label-focused-background = ${colors.primary}
+label-focused-padding = 2
+label-unfocused = %name%
+label-unfocused-padding = 2
+
+;; Window title
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:50:...%
+
+;; WiFi
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 3.0
+format-connected = [   %essid% ]
+format-disconnected = [󱚼 ]
+
+;; CPU usage
+[module/cpu]
+type = internal/cpu
+interval = 2
+format = [  <label> ]
+label = %percentage%%
+
+;; CPU temperature (lm-sensors)
+[module/temperature]
+type = internal/temperature
+interval = 5
+thermal-zone = 0
+warn-temperature = 70
+format = [  <label> ]
+label = %temperature-c%
+
+;; RAM usage
+[module/memory]
+type = internal/memory
+interval = 3
+format =  [   <label> ]
+label = %used%
+
+;; Brightness (pakai xbacklight / light)
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = [  <label> ]
+label = %percentage%%
+
+;; Volume (pulseaudio/alsa)
+[module/volume]
+type = internal/pulseaudio
+use-ui-max = false
+format-volume = [   <label> ] 
+label-volume = %percentage%%
+label-muted = mute
+
+;; Jam + Kalender
+[module/date]
+type = internal/date
+interval = 60
+date =   %d/%m/%Y
+time =   %H:%M
+label = [ %date% ][ %time% ]
+
+;; System Tray (built-in dari bar)
+[module/tray]
+type = internal/tray
