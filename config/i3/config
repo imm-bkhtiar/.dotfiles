@@ -211,8 +211,8 @@ client.focused   $background $color2 $background $background $background
 client.unfocused $statuslinebg $statuslinebg $color2 $statuslinebg $statuslinebg
 client.focused_inactive $statuslinebg $statuslinebg $color2 $statuslinebg $statuslinebg
 
-# gaps outer 5
-# gaps inner 5
+gaps outer 5
+gaps inner 5
 
 workspace 5 gaps vertical 50
 workspace 5 gaps horizontal 75
