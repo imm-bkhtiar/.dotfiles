@@ -85,3 +85,10 @@ function stop { sudo systemctl stop $1 }
 function restart { sudo systemctl restart $1 }
 function enable { sudo systemctl enable $1 }
 function disable { sudo systemctl disable $1 }
+
+function szsh {
+  source ./content.zshrc
+  echo "Hello World"
+}
+
+

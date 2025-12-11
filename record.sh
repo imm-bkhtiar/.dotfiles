@@ -11,6 +11,11 @@
 #     -movflags +faststart \
 #     output.mp4
 # }
+with_audio_mic="\
+  -f pulse -i alsa_input.pci-0000_00_14.2.analog-stereo \
+  -filter_complex "[1:a]volume=1[a1];[2:a]volume=7[a2];[a1][a2]amix=inputs=2[aout]" \
+  -map 0:v -map "[aout]" \
+"
 
 ffmpeg -thread_queue_size 1024 \
   -f x11grab -video_size 1366x768 -framerate 30 -i :0.0 \
@@ -18,8 +23,9 @@ ffmpeg -thread_queue_size 1024 \
   -f pulse -i alsa_input.pci-0000_00_14.2.analog-stereo \
   -filter_complex "[1:a]volume=1[a1];[2:a]volume=7[a2];[a1][a2]amix=inputs=2[aout]" \
   -map 0:v -map "[aout]" \
-  -c:v h264 -preset ultrafast -b:v 8000k -bufsize 8000k -maxrate 8000k -crf 23\
-  -profile:v main -level 4.0 -pix_fmt yuv420p \
+  -vf "scale=1280x720" \
+  -c:v h264 -preset veryfast -b:v 10M -bufsize 10M -maxrate 10M -crf 20 \
+  -profile:v main -level 4.1 -pix_fmt yuv420p \
   -c:a aac -b:a 160k -ar 48000 -ac 1 \
   -movflags +faststart \
-  output.mp4
+  $HOME/Videos/screen_record/ffmpeg-$(date +%Y_%m_%d_%H_%M).mkv
