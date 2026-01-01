@@ -41,11 +41,11 @@ alias rm="rm -I"
 # Alias Section
 alias music="TERM=xterm-256color musikcube"
 alias bakhtiar="cd $HOME/BAKHTIAR/source-code/"
+alias content="cd $HOME/BAKHTIAR/source-code/content/"
 alias q="exit"
 alias x="clear"
 alias ss="flameshot"
 alias update="sudo apt update && sudo apt upgrade"
-
 alias shutdown="systemctl poweroff"
 alias reboot="systemctl reboot"
 alias logout="i3-msg exit"
@@ -87,8 +87,6 @@ function enable { sudo systemctl enable $1 }
 function disable { sudo systemctl disable $1 }
 
 function szsh {
-  source ./content.zshrc
+  source $HOME/content.zshrc
   echo "Hello World"
 }
-
-
