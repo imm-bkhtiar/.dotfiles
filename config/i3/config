@@ -246,7 +246,7 @@ exec --no-startup-id i3-msg "workspace 1"
 
 bindsym $mod+e exec thunar
 bindsym $mod+b exec firefox
-bindsym $mod+Shift+s exec "$HOME/BAKHTIAR/Apps/portable/flameshot"
+bindsym $mod+Shift+s exec flameshot gui
 
 # Brightness and Volume settings
 bindsym Mod1+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%

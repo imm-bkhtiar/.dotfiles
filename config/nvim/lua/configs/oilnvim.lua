@@ -72,7 +72,7 @@ require("oil").setup({
     ["~"] = { "actions.cd", opts = { scope = "tab" }, mode = "n" },
     ["gs"] = { "actions.change_sort", mode = "n" },
     ["gx"] = "actions.open_external",
-    ["g."] = { "actions.toggle_hidden", mode = "n" },
+    ["<leader>h"] = { "actions.toggle_hidden", mode = "n" },
     ["g\\"] = { "actions.toggle_trash", mode = "n" },
   },
   -- Set to false to disable all of the above keymaps

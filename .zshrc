@@ -1,3 +1,4 @@
+
 # Created by newuser for 5.9
 # Default Settings export ZSH="$HOME/.oh-my-zsh"
 # source $ZSH/oh-my-zsh.sh
@@ -23,6 +24,7 @@ unsetopt correct_all
 # Export section
 # export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="$PATH:/usr/sbin"
 export PATH="$PATH:~/.local/kitty.app/bin"
 export PATH="$PATH:~/.dotnet/"
 export NVM_DIR="$HOME/.nvm"
@@ -44,7 +46,7 @@ alias bakhtiar="cd $HOME/BAKHTIAR/source-code/"
 alias content="cd $HOME/BAKHTIAR/source-code/content/"
 alias q="exit"
 alias x="clear"
-alias ss="flameshot"
+alias ss="flameshot gui"
 alias update="sudo apt update && sudo apt upgrade"
 alias shutdown="systemctl poweroff"
 alias reboot="systemctl reboot"
