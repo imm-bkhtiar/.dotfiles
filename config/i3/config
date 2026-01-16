@@ -228,12 +228,12 @@ workspace 9 gaps inner 5
 # default_floating_border pixel 0
 # hide_edge_borders smart
 
-# exec_always pkill polybar
-# exec_always --no-startup-id polybar &
+exec --no-startup-id polybar &
 exec --no-startup-id xfsettingsd &
 exec --no-startup-id picom &
 exec --no-startup-id dunst &
 exec --no-startup-id copyq &
+exec --no-startup-id mechvibes &
 exec --no-startup-id pulseaudio --start &
 exec_always --no-startup-id autotiling
 # exec --no-startup-id feh --bg-fill "$HOME/BAKHTIAR/Photos/wallpaper/wallpaper11.png"
