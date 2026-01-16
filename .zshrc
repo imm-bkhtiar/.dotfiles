@@ -88,6 +88,10 @@ function restart { sudo systemctl restart $1 }
 function enable { sudo systemctl enable $1 }
 function disable { sudo systemctl disable $1 }
 
+function record {
+  ./Videos/record.sh
+}
+
 function szsh {
   source $HOME/content.zshrc
   echo "Hello World"
