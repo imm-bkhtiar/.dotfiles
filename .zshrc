@@ -89,7 +89,7 @@ function enable { sudo systemctl enable $1 }
 function disable { sudo systemctl disable $1 }
 
 function record {
-  ./Videos/record.sh
+  $HOME/Videos/record.sh
 }
 
 function szsh {
