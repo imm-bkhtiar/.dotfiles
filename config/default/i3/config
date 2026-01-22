@@ -56,6 +56,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+Tab exec rofi -show drun -disable-history
+bindsym $mod+Shift+Tab exec rofi -show run -disable-history
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -232,7 +233,7 @@ exec --no-startup-id xfsettingsd &
 exec --no-startup-id picom &
 exec --no-startup-id dunst &
 exec --no-startup-id copyq &
-exec --no-startup-id mechvibes &
+# exec --no-startup-id mechvibes &
 exec --no-startup-id pulseaudio --start &
 exec_always --no-startup-id ~/.config/i3/polybar.sh
 exec_always --no-startup-id autotiling

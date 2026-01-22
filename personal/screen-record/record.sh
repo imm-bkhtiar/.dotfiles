@@ -1,8 +1,10 @@
 #!/bin/bash
 
 pkill mouseClicky.sh
+pkill mechvibes
 
 sleep 0.5 
+mechvibes &
 $HOME/.dotfiles/personal/mouse-clicky/mouseClicky.sh &
 # ffmpeg -thread_queue_size 1024 \
 #   -f x11grab -s 1366x768 -framerate 30 -i :0.0 \
@@ -58,4 +60,5 @@ ffmpeg -thread_queue_size 1024 \
   -movflags +faststart \
   $HOME/Videos/screen_record/ffmpeg-audio-$(date +%Y_%m_%d_%H_%M).mkv
 
+pkill mechvibes
 pkill mouseClicky
