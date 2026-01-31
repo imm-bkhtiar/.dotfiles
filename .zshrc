@@ -42,6 +42,7 @@ alias rm="rm -I"
 
 # Alias Section
 alias music="TERM=xterm-256color musikcube"
+alias mpv="mpv --profile=fast --hwdec=vaapi"
 alias coding="cd $HOME/BAKHTIAR/source-code/"
 alias app="cd $HOME/BAKHTIAR/Apps/portable/"
 alias content="cd $HOME/BAKHTIAR/source-code/content/"
