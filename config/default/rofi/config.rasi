@@ -27,9 +27,9 @@ configuration {
 window {
   width: 40%;
   border: 1px;
-  border-color: #5E9B2E;
+  border-color: #4F7E6D;
   background-color: rgba(0,0,0,0);
-  background-image: url("/home/immbkhtiar/BAKHTIAR/Photos/wallpaper/wallpaper11v2.png", both);
+  background-image: url("/home/immbkhtiar/BAKHTIAR/Photos/wallpaper/rofi_background_1.jpg", both);
   padding: 125 0 0;
 }
 

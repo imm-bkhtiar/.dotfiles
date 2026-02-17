@@ -4,8 +4,10 @@ pkill mouseClicky.sh
 pkill mechvibes
 
 sleep 0.5 
+echo "enable virtual mouse & mechanical keyboard sound .... "
 mechvibes &
 $HOME/.dotfiles/personal/mouse-clicky/mouseClicky.sh &
+
 # ffmpeg -thread_queue_size 1024 \
 #   -f x11grab -s 1366x768 -framerate 30 -i :0.0 \
 #   -f pulse -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \

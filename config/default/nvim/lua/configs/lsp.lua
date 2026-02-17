@@ -5,7 +5,8 @@ vim.lsp.enable({
   "intelephense",
   "ts_ls",
   "emmet_ls",
-  "vls"
+  "vls",
+  "eslint_lsp"
 })
 
 vim.diagnostic.config({

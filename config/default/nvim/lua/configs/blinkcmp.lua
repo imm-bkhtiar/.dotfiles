@@ -22,7 +22,7 @@ require('blink.cmp').setup({
   completion = {
     list = {
       selection = {
-        preselect = false,
+        preselect = true,
        -- function()
        --   local filetype = vim.bo.filetype
        --   if filetype == "css" then

@@ -43,7 +43,7 @@ alias rm="rm -I"
 # Alias Section
 alias music="TERM=xterm-256color musikcube"
 alias mpv="mpv --profile=fast --hwdec=vaapi"
-alias coding="cd $HOME/BAKHTIAR/source-code/"
+# alias coding="cd $HOME/BAKHTIAR/source-code/ && cd $1"
 alias app="cd $HOME/BAKHTIAR/Apps/portable/"
 alias content="cd $HOME/BAKHTIAR/source-code/content/"
 alias q="exit"
@@ -90,11 +90,19 @@ function restart { sudo systemctl restart $1 }
 function enable { sudo systemctl enable $1 }
 function disable { sudo systemctl disable $1 }
 
-function record {
+function record() {
   $HOME/Videos/record.sh
 }
 
-function szsh {
-  source $HOME/content.zshrc
-  echo "Hello World"
+function coding() {
+  coding_dir="$HOME/BAKHTIAR/source-code/"
+  coding_selected=$(find "$coding_dir" -maxdepth 1 -type d | fzf --height 40% --reverse )
+  
+  if [[ "$coding_selected" != "" ]]; then
+    nvim $coding_selected
+  fi
+}
+
+function ytd() {
+  yt-dlp -S res:720,ext:mp4 $1 --cookies-from-browser chrome "https://youtube.com"  --js-runtime node -o "$HOME/Videos/Youtube/%(title)s.%(ext)s"
 }
