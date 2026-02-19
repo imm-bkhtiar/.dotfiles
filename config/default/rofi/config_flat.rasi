@@ -2,7 +2,8 @@ configuration {
   filebrowser {
     sorting-method: "fzf";
   }
-  display-drun: "Applications";
+  display-drun: "Apps";
+  display-run: "Exec";
   display-window: "Windows";
   drun-display-format: "{icon} {name} ";
   font: "GeistMono Nerd Font Regular 11";
@@ -48,7 +49,7 @@ listview {
 
 element {
   padding: 0 ;
-  spacing: 2;
+  spacing: 5px;
 }
 
 element selected,
@@ -61,8 +62,14 @@ element-text{
 }
 
 inputbar {
-  padding: 10;
-  children: [entry];
+  padding: 10px;
+  children: [prompt,entry];
+  spacing: 10px;
+}
+
+prompt {
+  font: "GeistMono Nerd Font Bold 11";
+  color: @border;
 }
 
 entry {

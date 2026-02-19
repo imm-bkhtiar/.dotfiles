@@ -55,8 +55,9 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+Tab exec rofi -show drun -disable-history -config $HOME/.config/rofi/config_flat.rasi
-bindsym $mod+Shift+Tab exec rofi -show run -disable-history
+bindsym $mod+Tab exec rofi -show drun -p "Apps" -disable-history -theme $HOME/.config/rofi/config_flat.rasi
+bindsym $mod+Shift+Tab exec rofi -show run -p "Exec" -disable-history -theme $HOME/.config/rofi/config_flat.rasi
+
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -95,7 +96,7 @@ bindsym $mod+Shift+l move right
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym Mod1+Tab exec rofi -show window
+bindsym Mod1+Tab exec rofi -show window -theme $HOME/.config/rofi/config_flat.rasi
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -248,8 +249,10 @@ exec --no-startup-id i3-msg "workspace 1"
 bindsym $mod+e exec thunar
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+s exec flameshot gui
-bindsym $mod+x exec polybar-msg action "#powerBtn.module_toggle"
-
+# bindsym $mod+x exec polybar-msg action "#powerBtn.module_toggle"
+bindsym $mod+n exec $HOME/.config/rofi/modules/noteMenu/noteMenu.sh
+bindsym $mod+c exec $HOME/.config/rofi/modules/configMenu/configMenu.sh
+#
 # Brightness and Volume settings
 bindsym Mod1+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym Mod1+Down exec pactl set-sink-volume @DEFAULT_SINK@ -5%
