@@ -50,9 +50,10 @@ alias q="exit"
 alias x="clear"
 alias ss="flameshot gui"
 alias update="sudo apt update && sudo apt upgrade"
-alias shutdown="systemctl poweroff"
-alias reboot="systemctl reboot"
+# alias shutdown="systemctl poweroff"
+# alias reboot="systemctl reboot"
 alias logout="i3-msg exit"
+alias power="$HOME/.config/polybar/modules/powerMenu/power-btn.bash"
 
 # Promp
 
@@ -89,6 +90,12 @@ function stop { sudo systemctl stop $1 }
 function restart { sudo systemctl restart $1 }
 function enable { sudo systemctl enable $1 }
 function disable { sudo systemctl disable $1 }
+function ustart { systemctl --user start $1 }
+function ustatus { systemctl --user status $1 }
+function ustop { systemctl --user stop $1 }
+function urestart { systemctl --user restart $1 }
+function uenable { systemctl --user enable $1 }
+function udisable { systemctl --user disable $1 }
 
 function record() {
   $HOME/Videos/record.sh
@@ -99,6 +106,7 @@ function coding() {
   coding_selected=$(find "$coding_dir" -maxdepth 1 -type d | fzf --height 40% --reverse )
   
   if [[ "$coding_selected" != "" ]]; then
+    cd $coding_selected
     nvim $coding_selected
   fi
 }

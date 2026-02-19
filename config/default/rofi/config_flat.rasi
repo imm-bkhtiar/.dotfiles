@@ -13,9 +13,11 @@ configuration {
 @theme "/dev/null"
 
 * {
-  // bg: #111111;
+  // bg: #282a2ed9;
   bg: transparent;
   fg: #dddddd;
+  border: #4F7E6D;
+  disabled: #707880;
 
   background-color: @bg;
   color: @fg;
@@ -27,10 +29,10 @@ configuration {
 window {
   width: 40%;
   border: 1px;
-  border-color: #4F7E6D;
-  background-color: rgba(0,0,0,0);
-  background-image: url("/home/immbkhtiar/BAKHTIAR/Photos/wallpaper/rofi_background_1.jpg", both);
-  padding: 125 0 0;
+  border-color: @border;
+  background-color: #282a2ed9;
+  // background-image: url("/home/immbkhtiar/BAKHTIAR/Photos/wallpaper/rofi_background_1.jpg", both);
+  // padding: 125 0 0;
 }
 
 mainbox {
@@ -38,27 +40,27 @@ mainbox {
 }
 
 listview {
-  padding: 10;
+  padding: 0 10 10;
   lines: 10;
   // fixed-height: false;
-  background-color: @bg;
   // dynamic: true ;
 }
 
 element {
-  padding: 2.5;
+  padding: 0 ;
   spacing: 2;
-  cursor: pointer;
 }
 
 element selected,
 element-icon selected,
 element-text selected {
-  background-color: #5E9B2E11;
+  color: white;
+}
+element-text{
+  color: @disabled;
 }
 
 inputbar {
-  cursor: pointer;
   padding: 10;
   children: [entry];
 }

@@ -1,0 +1,120 @@
+configuration {
+  filebrowser {
+    sorting-method: "fzf";
+  }
+  display-drun: "Applications";
+  display-window: "Windows";
+  drun-display-format: "{icon} {name} ";
+  font: "GeistMono Nerd Font Regular 12";
+  show-icons: true;
+  icon-thme: "Adwaita";
+  kb-accept-entry: "MousePrimary";
+  kb-row-select: "";
+  kb-primary-paste: "";
+  kb-element-next: "";
+  kb-element-prev: "";
+  kb-select-1: "";
+  kb-select-2: "";
+  kb-select-3: "";
+  kb-select-4: "";
+}
+
+@theme "/dev/null"
+
+* {
+  bg: #282a2ed9;
+  // bg: transparent;
+  fg: #dddddd;
+  border: #4F7E6D;
+  disabled: #707880;
+
+  background-color: @bg;
+  color: @fg;
+  margin: 0;
+  spacing: 0;
+  padding: 0;
+}
+
+window {
+  width: 20%;
+  // border: 1px;
+  // border-color: @border;
+  border: none;
+  background-color: transparent;
+  // background-color: #282a2ed9;
+  // background-image: url("/home/immbkhtiar/BAKHTIAR/Photos/wallpaper/rofi_background_1.jpg", both);
+  // padding: 125 0 0;
+}
+
+mainbox {
+  border: 2px;
+  border-color: @border;
+  background-color: @bg;
+  // children: [prompt, element];
+}
+
+listview{
+  // padding: 10;
+  lines: 1;
+  // fixed-height: false;
+  // dynamic: true ;
+  columns: 2;
+  fixed-columns: true;
+  background-color: none;
+  background: none;
+  spacing: 20px;
+}
+
+element {
+  padding: 0;
+  border: 2px;
+  children: [element-text];
+  border-color: @border;
+  margin: 10px;
+  orientation: vertical;
+}
+
+element-icon,
+element-text {
+  padding: 10px;
+  position: center;
+  cursor: pointer;
+  // border-color: red; 
+  // border: 1px;
+  // background-color: @bg;
+}
+
+element selected,
+element-icon selected,
+element-text selected {
+  // color: red;
+}
+
+element-text{
+  color: white;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+}
+element-icon {
+  color: white;
+  size: 32px;
+  border: 2px;
+  // border-color: @border;
+}
+
+inputbar {
+  padding: 10;
+  children: [prompt];
+  enabled: false; 
+}
+
+entry {
+  placeholder: "Search:";
+  placeholder-color: #333333;
+  enabled: false;
+}
+
+textbox {
+  horizontal-align: 0.5;
+  padding: 10px;
+}

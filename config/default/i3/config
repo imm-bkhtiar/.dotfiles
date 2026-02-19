@@ -55,7 +55,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+Tab exec rofi -show drun -disable-history
+bindsym $mod+Tab exec rofi -show drun -disable-history -config $HOME/.config/rofi/config_flat.rasi
 bindsym $mod+Shift+Tab exec rofi -show run -disable-history
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -248,6 +248,7 @@ exec --no-startup-id i3-msg "workspace 1"
 bindsym $mod+e exec thunar
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+s exec flameshot gui
+bindsym $mod+x exec polybar-msg action "#powerBtn.module_toggle"
 
 # Brightness and Volume settings
 bindsym Mod1+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%
