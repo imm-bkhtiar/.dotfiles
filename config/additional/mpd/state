@@ -1,8 +1,8 @@
 sw_volume: 100
 audio_device_state:1:pulse
 state: play
-current: 0
-time: 85.048
+current: 29
+time: 120.154
 random: 0
 repeat: 1
 single: 0
@@ -12,6 +12,59 @@ mixrampdb: 0
 mixrampdelay: -1
 lastloadedplaylist: 
 playlist_begin
-0:Feels_cool/MXZI - MONTAGEM TOMADA (Slowed   Extended)(MP3_160K).mp3
-1:Feels_cool/X-TALI.mp3
+0:Lofi_ncs/HoliznaCC0 - 2 Hour Delay.mp3
+1:Lofi_ncs/HoliznaCC0 - Canon Event ( Lofi , Sad , Reflection ).mp3
+2:Lofi_ncs/HoliznaCC0 - Come Again.mp3
+3:Lofi_ncs/HoliznaCC0 - Fire Place.mp3
+4:Lofi_ncs/HoliznaCC0 - First Snow.mp3.mp3
+5:Lofi_ncs/HoliznaCC0 - Laundry On The Wire.mp3.mp3
+6:Lofi_ncs/HoliznaCC0 - One Night In France ( Lofi, Nostalgic, Chill ).mp3
+7:Lofi_ncs/HoliznaCC0 - Snow Drift.mp3
+8:Lofi_ncs/HoliznaCC0 - So Broke.mp3
+9:Lofi_ncs/HoliznaCC0 - Waiting Around ( LoFi , Calm ).mp3
+10:Lofi_ncs/HoliznaCC0 - Warm Fuzz ( LoFi , Retro ).mp3
+11:Lofi_ncs/HoliznaCC0 - Waves.mp3.mp3
+12:Lofi_ncs/HoliznaCC0 - When I Was Human ( LoFi , Chill ).mp3
+13:Lofi_ncs/HoliznaCC0 - When Time Called Me Darling ( Lofi, Relaxing, Chill).mp3
+14:Lofi_ncs/HoliznaCC0 - Windows Down.mp3.mp3
+15:Lofi_ncs/HoliznaCC0 - Yet Again ( LoFi , Peaceful ).mp3
+16:Lofi_ncs/Lo-Fi Astronaut - Analog ( LoFi , Hopeful ).mp3
+17:Lofi_ncs/Lo-Fi Astronaut - Attic Of The Universe ( LoFi , Retro ).mp3
+18:Lofi_ncs/Lo-Fi Astronaut - Autumn In The Air ( LoFi , Nostalgic ).mp3
+19:Lofi_ncs/Lo-Fi Astronaut - Design For Dreaming ( LoFi , Relaxing ).mp3
+20:Lofi_ncs/Lo-Fi Astronaut - Phasing ( LoFi , Peaceful ).mp3
+21:Lofi_ncs/snoozy beats - around the world [lofi chill].mp3
+22:Lofi_ncs/snoozy beats - bar 123 [chill lofi].mp3
+23:Lofi_ncs/snoozy beats - becoming you [slow lofi].mp3
+24:Lofi_ncs/snoozy beats - been around [lofi chill].mp3
+25:Lofi_ncs/snoozy beats - cafe crumble [lofi beat].mp3
+26:Lofi_ncs/snoozy beats - chill lofi beat.mp3
+27:Lofi_ncs/snoozy beats - down the alley [chill lofi].mp3
+28:Lofi_ncs/snoozy beats - harvest time [relaxing lofi].mp3
+29:Lofi_ncs/snoozy beats - honey [chill lofi].mp3
+30:Lofi_ncs/snoozy beats - laundromat [lofi chill].mp3
+31:Lofi_ncs/snoozy beats - lofi autumn days.mp3
+32:Lofi_ncs/snoozy beats - lofi beat 2.mp3
+33:Lofi_ncs/snoozy beats - lofi beat 3.mp3
+34:Lofi_ncs/snoozy beats - lofi girl.mp3
+35:Lofi_ncs/snoozy beats - lofi inspirational.mp3
+36:Lofi_ncs/snoozy beats - lofi mood [chill lofi].mp3
+37:Lofi_ncs/snoozy beats - lofi piano beat.mp3
+38:Lofi_ncs/snoozy beats - lofi piano days.mp3
+39:Lofi_ncs/snoozy beats - lofi streets.mp3
+40:Lofi_ncs/snoozy beats - lonely self [piano lofi].mp3
+41:Lofi_ncs/snoozy beats - lovely days [lofi].mp3
+42:Lofi_ncs/snoozy beats - missing you [sad lofi].mp3
+43:Lofi_ncs/snoozy beats - moon beat [lofi].mp3
+44:Lofi_ncs/snoozy beats - moving on [lofi].mp3
+45:Lofi_ncs/snoozy beats - new lofi.mp3
+46:Lofi_ncs/snoozy beats - on top [lofi beat].mp3
+47:Lofi_ncs/snoozy beats - rainy lofi day.mp3
+48:Lofi_ncs/snoozy beats - relax by the pool [chill lofi].mp3
+49:Lofi_ncs/snoozy beats - slow hands [chill lofi beat].mp3
+50:Lofi_ncs/snoozy beats - summer lofi.mp3
+51:Lofi_ncs/snoozy beats - walking dreaming [chill lofi].mp3
+52:Lofi_ncs/AvapXia - it's perfect weather for a trip to the café, don't you think_.mp3
+53:Lofi_ncs/AvapXia - summer sunset.mp3
+54:Lofi_ncs/Adeline Yeo (HP) - With Hush Child Chill Vibes Lofi Music Collaboration.mp3
 playlist_end
