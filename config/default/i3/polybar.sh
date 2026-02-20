@@ -9,3 +9,4 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch polybar
 polybar &
 sleep 0.2
+polybar-msg action "#powerBtn.module_hide"

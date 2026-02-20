@@ -9,7 +9,7 @@ selected=$(find $rodir -type f | \
   rofi -dmenu -i -p "My Note" -theme $HOME/.config/rofi/config_flat.rasi)
 
 if [[ $selected != "" ]]; then
-  kitty --hold nvim "$rodir/$selected"
+  kitty sh -c "nvim '$rodir/$selected'"
 else
   exit
 fi
