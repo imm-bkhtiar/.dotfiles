@@ -249,7 +249,7 @@ exec --no-startup-id i3-msg "workspace 1"
 bindsym $mod+e exec thunar
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+s exec flameshot gui
-bindsym $mod+x exec --no-startup-id polybar-msg action "#powerBtn.module_toggle"
+
 bindsym $mod+n exec $HOME/.config/rofi/modules/noteMenu/noteMenu.sh
 bindsym $mod+c exec $HOME/.config/rofi/modules/configMenu/configMenu.sh
 #
@@ -276,3 +276,6 @@ for_window [class="^.*"] border pixel 1.5
 # Custom Keybind
 
 # bindsym Control+f exec cd $(find . -type d | fzf)
+exec --no-startup-id $HOME/.config/i3/polybarDefault.sh
+bindsym $mod+x exec --no-startup-id polybar-msg action "#powerBtn.module_toggle"
+bindsym $mod+m exec --no-startup-id $HOME/.config/i3/polybarSwitch.sh
