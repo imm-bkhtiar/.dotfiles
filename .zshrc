@@ -53,7 +53,6 @@ alias update="sudo apt update && sudo apt upgrade"
 # alias shutdown="systemctl poweroff"
 # alias reboot="systemctl reboot"
 alias logout="i3-msg exit"
-alias power="$HOME/.config/polybar/modules/powerMenu/power-btn.bash"
 
 # Promp
 
