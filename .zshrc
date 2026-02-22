@@ -41,7 +41,7 @@ alias ll="ls -l"
 alias rm="rm -I"
 
 # Alias Section
-alias music="TERM=xterm-256color musikcube"
+# alias music="TERM=xterm-256color musikcube"
 alias mpv="mpv --profile=fast --hwdec=vaapi"
 # alias coding="cd $HOME/BAKHTIAR/source-code/ && cd $1"
 alias app="cd $HOME/BAKHTIAR/Apps/portable/"
@@ -50,8 +50,8 @@ alias q="exit"
 alias x="clear"
 alias ss="flameshot gui"
 alias update="sudo apt update && sudo apt upgrade"
-# alias shutdown="systemctl poweroff"
-# alias reboot="systemctl reboot"
+alias shutdown="systemctl poweroff"
+alias reboot="systemctl reboot"
 alias logout="i3-msg exit"
 
 # Promp
@@ -111,5 +111,5 @@ function coding() {
 }
 
 function ytd() {
-  yt-dlp -S res:720,ext:mp4 $1 --cookies-from-browser chrome "https://youtube.com"  --js-runtime node -o "$HOME/Videos/Youtube/%(title)s.%(ext)s"
+  yt-dlp -S res:720,ext:mp4 $1 --cookies-from-browser chromium:$HOME/.local/share/qutebrowser --js-runtime node -o "$HOME/Videos/Youtube/%(title)s.%(ext)s"
 }
