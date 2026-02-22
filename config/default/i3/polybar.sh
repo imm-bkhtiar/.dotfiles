@@ -8,7 +8,9 @@ while pgrep -u $UID -x polybar >/dev/null; do
   sleep 1; 
 done
 
-touch $HOME/.cache/polybarState
+cacheFileState=$HOME/.cache/polybarState
+touch $cacheFileState
+printf "mode=default\npowerBtn=false" > $cacheFileState
 
 # Launch polybar
 polybar &

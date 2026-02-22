@@ -1,10 +1,17 @@
 #!/bin/env bash
 
-polybarStadeMode=$(cat $HOME/.cache/polybarState)
-if [[ $polybarStadeMode != "music" ]]; then
+polybarStateMode=$(grep "^mode=" $HOME/.cache/polybarState | cut -d "=" -f2)
+polybarStatePowerBtn=$(grep "^powerBtn=" $HOME/.cache/polybarState | cut -d "=" -f2)
+
+if [[ $polybarStatePowerBtn == "true" ]]; then
+  polybar-msg action "#powerBtn.module_show"
+else
+  polybar-msg action "#powerBtn.module_hide"
+fi
+
+if [[ $polybarStateMode != "music" ]]; then
   polybar-msg action "#mpd.module_hide" 
   polybar-msg action "#mpd2.module_hide"
-  polybar-msg action "#powerBtn.module_hide"
 
   polybar-msg action "#xwindow.module_show"
   polybar-msg action "#wlan.module_show"
@@ -14,11 +21,9 @@ if [[ $polybarStadeMode != "music" ]]; then
   polybar-msg action "#backlight.module_show"
   polybar-msg action "#pulseaudio.module_show"
   polybar-msg action "#date.module_show" 
-  polybar-msg action "#powerBtn.module_hide"
 else
   polybar-msg action "#mpd.module_show" 
   polybar-msg action "#mpd2.module_show"
-  polybar-msg action "#powerBtn.module_show"
 
   polybar-msg action "#xwindow.module_hide"
   polybar-msg action "#wlan.module_hide"
@@ -28,5 +33,4 @@ else
   polybar-msg action "#backlight.module_hide"
   polybar-msg action "#pulseaudio.module_hide"
   polybar-msg action "#date.module_hide" 
-  polybar-msg action "#powerBtn.module_hide"
 fi

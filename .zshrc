@@ -102,7 +102,7 @@ function record() {
 
 function coding() {
   coding_dir="$HOME/BAKHTIAR/source-code/"
-  coding_selected=$(find "$coding_dir" -maxdepth 1 -type d | fzf --height 40% --reverse )
+  coding_selected=$(find "$coding_dir" -maxdepth 1 -mindepth 1 -type d | fzf --height 40% --reverse )
   
   if [[ "$coding_selected" != "" ]]; then
     cd $coding_selected
