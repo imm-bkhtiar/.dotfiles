@@ -53,6 +53,7 @@ alias update="sudo apt update && sudo apt upgrade"
 alias shutdown="systemctl poweroff"
 alias reboot="systemctl reboot"
 alias logout="i3-msg exit"
+alias scrcpy="scrcpy --video-encoder=OMX.google.h264.encoder"
 
 # Promp
 
@@ -102,11 +103,12 @@ function record() {
 
 function coding() {
   coding_dir="$HOME/BAKHTIAR/source-code/"
-  coding_selected=$(find "$coding_dir" -maxdepth 1 -mindepth 1 -type d | fzf --height 40% --reverse )
+  coding_selected=$(find "$coding_dir" -maxdepth 1 -mindepth 1 -type d | fzf --height 40% --reverse)
   
-  if [[ "$coding_selected" != "" ]]; then
-    cd $coding_selected
-    nvim $coding_selected
+  if [[ -d "$coding_selected" ]]; then
+    cd $coding_selected && nvim .
+  else
+    mkdir -p "$coding_selected" && cd "$coding_selected" && nvim .
   fi
 }
 
