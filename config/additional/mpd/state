@@ -1,8 +1,8 @@
 sw_volume: 100
 audio_device_state:1:pulse
-state: pause
-current: 13
-time: 227.393
+state: play
+current: 2
+time: 22.614
 random: 0
 repeat: 1
 single: 0
@@ -17,13 +17,11 @@ playlist_begin
 2:Anime/Black Catcher(MP3_160K).mp3
 3:Anime/Yamiyo(MP3_160K).mp3
 4:Anime/Fly-day Chinatown(MP3_160K).mp3
-5:Anime/Kebahagiaanmu Tak Harus Denganku _ Shiawase - Back Number _ Terjemahan Indonesia(MP3_160K).mp3
-6:Anime/Koiiro(MP3_160K).mp3
-7:Anime/イエスタデイ(MP3_160K).mp3
-8:Anime/_Mayonaka no Door〜stay with me__ Miki Matsubara Official Lyric Video(MP3_160K).mp3
-9:Anime/Suzume (feat. Toaka)(MP3_160K).mp3
-10:Anime/怪獣(MP3_160K).mp3
-11:Anime/Stories (From _Black Clover_)(MP3_160K).mp3
-12:Anime/ARIGATO(MP3_160K).mp3
-13:Anime/Anri - Remember Summer Days (Timely__ Track 11)(MP3_160K).mp3
+5:Anime/Koiiro(MP3_160K).mp3
+6:Anime/イエスタデイ(MP3_160K).mp3
+7:Anime/Suzume (feat. Toaka)(MP3_160K).mp3
+8:Anime/怪獣(MP3_160K).mp3
+9:Anime/Stories (From _Black Clover_)(MP3_160K).mp3
+10:Anime/ARIGATO(MP3_160K).mp3
+11:Anime/Anri - Remember Summer Days (Timely__ Track 11)(MP3_160K).mp3
 playlist_end

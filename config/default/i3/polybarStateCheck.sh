@@ -12,6 +12,7 @@ fi
 if [[ $polybarStateMode != "music" ]]; then
   polybar-msg action "#mpd.module_hide" 
   polybar-msg action "#mpd2.module_hide"
+  polybar-msg action "#pulseaudio2.module_hide"
 
   polybar-msg action "#xwindow.module_show"
   polybar-msg action "#wlan.module_show"
@@ -24,6 +25,7 @@ if [[ $polybarStateMode != "music" ]]; then
 else
   polybar-msg action "#mpd.module_show" 
   polybar-msg action "#mpd2.module_show"
+  polybar-msg action "#pulseaudio2.module_show"
 
   polybar-msg action "#xwindow.module_hide"
   polybar-msg action "#wlan.module_hide"
