@@ -12,7 +12,7 @@ local function setColor(color)
   vim.cmd.colorscheme(color)
 
   vim.api.nvim_set_hl(0, "Normal", { bg = 'none'})
-  -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = 'none'})
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = 'none'})
   -- vim.api.nvim_set_hl(0, "", { bg = 'none'})
   vim.api.nvim_set_hl(0, "cursorline", { bg = 'none'})
   vim.api.nvim_set_hl(0, "Statusline", { bg = 'none', bold = true})
@@ -24,12 +24,13 @@ local function setColor(color)
   vim.api.nvim_set_hl(0, "LineNr", { fg = "#888888",bg = 'none'})
 
   -- blink cmp apperance
-  vim.api.nvim_set_hl(0, "BlinkCmpMenu", { fg = "#aaaaaa", bg = "none"})
-  vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#5E9B2E"})
+  -- vim.api.nvim_set_hl(0, "BlinkCmpMenu", { fg = "#aaaaaa", bg = "none"})
+  -- vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#5E9B2E"})
   -- vim.api.nvim_set_hl(0, "BlinkCmpLabel", { fg = "#5E9B2E"})
-  vim.api.nvim_set_hl(0, "BlinkCmpDoc", { fg = "#aaaaaa"})
-  vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { fg = "#466a29"})
-  vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", {fg = "#5E9B2E"})
+  -- vim.api.nvim_set_hl(0, "BlinkCmpDoc", { fg = "#aaaaaa"})
+  -- vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { fg = "#466a29"})
+  -- vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", {bg = "none"})
 end
 
-setColor("gruvbox")
+
+setColor("matchalk")

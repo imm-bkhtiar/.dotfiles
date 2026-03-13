@@ -11,7 +11,6 @@ else
       "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath
     })
   end
-
   vim.opt.rtp:prepend(lazypath)
 
   -- call user settings

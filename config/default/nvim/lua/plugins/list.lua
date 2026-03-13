@@ -98,6 +98,27 @@ return {
         require "configs.markdown_render"
       end
   },
+  {
+    'laytan/cloak.nvim',
+    config = function ()
+      require "configs.cloak"
+    end
+  },
+  {
+    "jiaoshijie/undotree",
+    config = function ()
+      require "configs.undotree"
+    end
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    priority = 1000,
+    enabled = true,
+    config = function()
+      require "configs.color"
+    end
+  }
+}
   -- {
   --   "iamcco/markdown-preview.nvim",
   --   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -110,4 +131,3 @@ return {
   --     require "configs.markdown_preview"
   --   end
   -- },
-}
