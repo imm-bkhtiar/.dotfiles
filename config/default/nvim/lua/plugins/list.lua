@@ -44,18 +44,6 @@ return {
     end,
   },
   {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = "cd ~/.local/share/nvim/lazy/markdown-preview.nvim/ && npm install",
-    init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-    ft = { "markdown" },
-    config = function()
-      require "configs.markdown_preview"
-    end
-  },
-  {
     "shellRaining/hlchunk.nvim",
     event = { "BufReadPre", "BufNewFile" },
     config = function ()
@@ -92,6 +80,7 @@ return {
       ---@module 'oil'
       ---@type oil.SetupOpts,
       dependencies = { { "echasnovski/mini.icons", opts = {} } },
+      enabled = true,
       -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
       -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
       lazy = false,
@@ -102,13 +91,23 @@ return {
   {
       'MeanderingProgrammer/render-markdown.nvim',
       dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },            -- if you use the mini.nvim suite
-      -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
-      -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
       ---@module 'render-markdown'
       ---@type render.md.UserConfig
       opts = {},
       config = function ()
         require "configs.markdown_render"
       end
-  }
+  },
+  -- {
+  --   "iamcco/markdown-preview.nvim",
+  --   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+  --   build = "cd ~/.local/share/nvim/lazy/markdown-preview.nvim/ && npm install",
+  --   init = function()
+  --     vim.g.mkdp_filetypes = { "markdown" }
+  --   end,
+  --   ft = { "markdown" },
+  --   config = function()
+  --     require "configs.markdown_preview"
+  --   end
+  -- },
 }

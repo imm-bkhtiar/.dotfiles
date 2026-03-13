@@ -2,11 +2,10 @@ vim.lsp.enable({
   "html",
   "lua_ls",
   "cssls",
+  "tailwindcss",
   "intelephense",
   "ts_ls",
   "emmet_ls",
-  "vls",
-  "eslint_lsp"
 })
 
 vim.diagnostic.config({

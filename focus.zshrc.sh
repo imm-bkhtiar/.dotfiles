@@ -1,4 +1,3 @@
-
 # Created by newuser for 5.9
 # Default Settings export ZSH="$HOME/.oh-my-zsh"
 # source $ZSH/oh-my-zsh.sh
@@ -12,9 +11,9 @@ zstyle ":completion:*" matcher-list "m:{a-zA-Z}={A-Za-z}"
 plugins=(
   git
   zsh-syntax-highlighting
-  # emoji
-  # qrcode
-  # zsh-vi-mode
+  zsh-vi-mode
+  emoji
+  qrcode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -64,10 +63,10 @@ alias scrcpy="scrcpy --video-encoder=OMX.google.h264.encoder"
 # git="%{\e[38;2;90;230;195m%}"
 
 normal="%f%k"                     # reset warna
-white="%F{white}"                 # putih
+white="%F{#8c8c8c}"                 # putih
 clock="%F{#475055}"               # RGB 205,215,155
 dir="%F{#E9AD6B}"                # RGB 230,180,90
-git="%F{#4D758E}"                 # RGB 90,230,195
+git="%F{#786eb9}"                 # RGB 90,230,195
 user="%F{#424334}"
 
 function get_git_branch() {
@@ -78,18 +77,9 @@ function get_git_branch() {
   fi
 }
 
-function is_root(){
-  if [[ $EUID == 0 ]]; then
-    echo "root"
-  else
-    echo "user"
-  fi
-}
-
 setopt PROMPT_SUBST
-PS1="${user}  \$(is_root) ${white}:: ${dir}  %2~/ ${white}:: ${git} \$(get_git_branch) ${normal}> "
-# PS1="${white}┌[${user}  \$(is_root) ${white}][ ${dir}  %2~/ ${white}][ ${git} \$(get_git_branch) ${white}]
-# └>${normal} "
+PS1="${white}┌[   %n ][   %1~ ][ ${git} \$(get_git_branch) ${white}]
+└>${normal} "
 
 # Custom Function
 
@@ -119,11 +109,9 @@ function coding() {
 
   
   if [[ -d "$selected" && -n "$selected" ]]; then
-    tmux new-session -A -c "$selected" "nvim ."
+    cd $selected && tmux && nvim .
   elif [[ "$query" != "" ]]; then
-    mkdir "$coding_dir/$query" && tmux new-session -A -c "$selected" \; send-keys "nvim ." C-m 
-  else
-    cd "$coding_dir"
+    mkdir "$coding_dir/$query" && cd "$coding_dir/$query" && nvim .
   fi
 }
 

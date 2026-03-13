@@ -1,9 +1,9 @@
 require('blink.cmp').setup({
   keymap = {
     preset = 'default',
-    ['<S-Tab>'] = { 'select_prev', 'fallback' },
-    ['<Tab>'] = { 'select_next', 'fallback' },
-    ['<CR>'] = { 'accept' , "fallback" },
+    ['<C-p>'] = { 'select_prev', 'fallback' },
+    ['<C-n>'] = { 'select_next', 'fallback' },
+    ['<Tab>'] = { 'accept' , "fallback" },
   },
 
   appearance = {
@@ -20,16 +20,17 @@ require('blink.cmp').setup({
   },
 
   completion = {
+    ghost_text = { enabled = true },
     list = {
       selection = {
         preselect = true,
-       -- function()
-       --   local filetype = vim.bo.filetype
-       --   if filetype == "css" then
-       --     return false
-       --   end
-       --   return true
-       -- end,
+        -- function()
+        --   local filetype = vim.bo.filetype
+        --   if filetype == "css" then
+        --     return false
+        --   end
+        --   return true
+        -- end,
         auto_insert = false,
       },
     },
@@ -69,15 +70,16 @@ require('blink.cmp').setup({
         }
       },
     },
-
-  documentation = {
+    documentation = {
       auto_show = true,
       window = {
         border = 'single',
         winblend = 0,
       }
-    }
+    },
   },
+
+
 
   signature = {
     enabled = true,

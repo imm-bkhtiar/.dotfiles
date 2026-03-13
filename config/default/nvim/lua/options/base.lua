@@ -52,10 +52,10 @@ vim.opt.updatetime = 50
 -- vim.opt.colorcolumn = "80"
 
 -- netrw settings
-vim.g.netrw_banner = 0 -- set information banner in above :Ex to false
-vim.g.netrw_fastmap = 0
+-- vim.g.netrw_fastmap = 0
+vim.g.netrw_banner = 1 -- set information banner in above :Ex to false
 vim.g.netrw_altv = 1
-vim.g.netrw_liststyle = 3
+vim.g.netrw_liststyle = 0
 
 -- undercurl 
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
