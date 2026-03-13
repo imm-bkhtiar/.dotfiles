@@ -263,6 +263,8 @@ bindsym Mod1+Left exec --no-startup-id brightnessctl set 5%-
 bindsym Mod1+Right exec --no-startup-id brightnessctl set 5%+
 bindsym Mod1+h exec --no-startup-id mpc seek -10
 bindsym Mod1+l exec --no-startup-id mpc seek +10
+bindsym Mod1+p exec --no-startup-id mpc seek prev
+bindsym Mod1+n exec --no-startup-id mpc seek next
 bindsym Mod1+space exec --no-startup-id mpc toggle
 
 # Floting style for spesific app
