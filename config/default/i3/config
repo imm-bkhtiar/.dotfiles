@@ -48,9 +48,6 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-# start a terminal
-bindsym $mod+Return exec --no-startup-id xterm
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -243,14 +240,6 @@ exec_always --no-startup-id autotiling
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id exec brightnessctl set 40%
 
-exec --no-startup-id i3-msg "workspace 1;exec --no-startup-id xterm" 
-# exec --no-startup-id i3-msg "workspace 2;exec $HOME/BAKHTIAR/Apps/portable/firefox/firefox"
-exec --no-startup-id i3-msg "workspace 1" 
-
-bindsym $mod+e exec thunar
-bindsym $mod+b exec firefox
-bindsym $mod+Shift+s exec flameshot gui
-
 bindsym $mod+n exec $HOME/.config/rofi/modules/noteMenu/noteMenu.sh
 bindsym $mod+c exec $HOME/.config/rofi/modules/configMenu/configMenu.sh
 #
@@ -263,8 +252,8 @@ bindsym Mod1+Left exec --no-startup-id brightnessctl set 5%-
 bindsym Mod1+Right exec --no-startup-id brightnessctl set 5%+
 bindsym Mod1+h exec --no-startup-id mpc seek -10
 bindsym Mod1+l exec --no-startup-id mpc seek +10
-bindsym Mod1+p exec --no-startup-id mpc seek prev
-bindsym Mod1+n exec --no-startup-id mpc seek next
+bindsym Mod1+p exec --no-startup-id mpc prev
+bindsym Mod1+n exec --no-startup-id mpc next
 bindsym Mod1+space exec --no-startup-id mpc toggle
 
 # Floting style for spesific app
@@ -277,10 +266,19 @@ for_window [class="emoji_picker"] floating enable
 
 for_window [class="^.*"] border pixel 1.5 
 
-# Xcursor.theme: ArcAurora-cursors
-# Xcursor.size: 24 
 # Custom Keybind
+set $term "xterm"
 
 # bindsym Control+f exec cd $(find . -type d | fzf)
 bindsym $mod+x exec --no-startup-id $HOME/.config/i3/polybarSwitch.sh "toggle-power" 
 bindsym $mod+m exec --no-startup-id $HOME/.config/i3/polybarSwitch.sh "toggle-mode"
+
+bindsym $mod+e exec thunar
+bindsym $mod+b exec firefox
+bindsym $mod+Shift+s exec flameshot gui
+# start a terminal
+bindsym $mod+Return exec --no-startup-id $term
+
+exec --no-startup-id i3-msg "workspace 1;exec --no-startup-id $term" 
+# exec --no-startup-id i3-msg "workspace 2;exec $HOME/BAKHTIAR/Apps/portable/firefox/firefox"
+exec --no-startup-id i3-msg "workspace 1" 
