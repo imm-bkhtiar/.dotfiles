@@ -25,6 +25,7 @@ require('kanagawa').setup({
       BlinkCmpMenuBorder = { bg = "none" },
       Pmenu = { bg = "none" },
       PmenuSel = { fg = "none" },
+      Statusline = { bg = "none" },
     }
   end,
   theme = "wave",              -- Load "wave" theme

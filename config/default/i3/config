@@ -49,7 +49,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec --no-startup-id xterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -243,7 +243,7 @@ exec_always --no-startup-id autotiling
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id exec brightnessctl set 40%
 
-exec --no-startup-id i3-msg "workspace 1;exec xterm" 
+exec --no-startup-id i3-msg "workspace 1;exec --no-startup-id xterm" 
 # exec --no-startup-id i3-msg "workspace 2;exec $HOME/BAKHTIAR/Apps/portable/firefox/firefox"
 exec --no-startup-id i3-msg "workspace 1" 
 

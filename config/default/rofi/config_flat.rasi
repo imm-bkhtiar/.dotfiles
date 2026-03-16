@@ -31,7 +31,8 @@ window {
   width: 40%;
   border: 1px;
   border-color: @border;
-  background-color: #282a2ed9;
+  background-color: #282a2e;
+  // background-color: #282a2ed9;
   // background-image: url("/home/immbkhtiar/BAKHTIAR/Photos/wallpaper/rofi_background_1.jpg", both);
   // padding: 125 0 0;
 }
