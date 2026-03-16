@@ -48,7 +48,7 @@ vim.opt.statusline = table.concat({
   " %Y ", -- Filetype dengan warna
   "%#StatusModeI#",
   " %l/%L | %c ", -- Line number dengan warna
-  "%#StatusModeN#",
-  "  %{v:lua.CurrentTime()}  ", -- Jam dengan warna
+  -- "%#StatusModeN#",
+  -- "  %{v:lua.CurrentTime()}  ", -- Jam dengan warna
 })
 vim.opt.laststatus = 3

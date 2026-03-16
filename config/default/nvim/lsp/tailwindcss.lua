@@ -3,7 +3,6 @@ return {
     cmd = { 'tailwindcss-language-server', '--stdio' },
     -- filetypes copied and adjusted from tailwindcss-intellisense
     filetypes = {
-      -- html
       'aspnetcorerazor',
       'astro',
       'astro-markdown',
