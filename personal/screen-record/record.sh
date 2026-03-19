@@ -1,13 +1,5 @@
 #!/bin/bash
 
-pkill mouseClicky.sh
-pkill mechvibes
-
-sleep 0.5 
-echo "enable virtual mouse & mechanical keyboard sound .... "
-mechvibes &
-$HOME/.dotfiles/personal/mouse-clicky/mouseClicky.sh &
-
 # ffmpeg -thread_queue_size 1024 \
 #   -f x11grab -s 1366x768 -framerate 30 -i :0.0 \
 #   -f pulse -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
@@ -53,14 +45,38 @@ $HOME/.dotfiles/personal/mouse-clicky/mouseClicky.sh &
 #   -movflags +faststart \
 #   $HOME/Videos/screen_record/ffmpeg-audio-$(date +%Y_%m_%d_%H_%M).mkv
 
-ffmpeg -thread_queue_size 1024 \
-  -f x11grab -s 1366x768 -framerate 30 -i :0.0 \
-  -f pulse -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
-  -c:v h264 -preset ultrafast -b:v 8000k -bufsize 8000k -crf 23 \
-  -profile:v main -level 4.0 -pix_fmt yuv420p \
-  -c:a aac -b:a 160k -ar 48000 -ac 1 \
-  -movflags +faststart \
-  $HOME/Videos/screen_record/ffmpeg-audio-$(date +%Y_%m_%d_%H_%M).mkv
+case $XDG_SESSION_TYPE in
+  "wayland")
+    wf-recorder \
+      --audio=alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
+      --codec=libx264 \
+      --pixel-format=yuv420p \
+      --file=$HOME/Videos/screen_record/wf-$(date +%Y_%m_%d_%H_%M).mkv \
+      --params="preset=ultrafast,crf=23,profile=main,level=4.0,b=8000k,bufsize=8000k"
+  ;;
+  "x11") 
+    pkill mouseClicky.sh
+    pkill mechvibes
 
-pkill mechvibes
-pkill mouseClicky
+    sleep 0.5 
+    echo "enable virtual mouse & mechanical keyboard sound .... "
+    mechvibes &
+    $HOME/.dotfiles/personal/mouse-clicky/mouseClicky.sh &
+
+    ffmpeg -thread_queue_size 1024 \
+      -f x11grab -s 1366x768 -framerate 30 -i :0.0 \
+      -f pulse -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
+      -c:v h264 -preset ultrafast -b:v 8000k -bufsize 8000k -crf 23 \
+      -profile:v main -level 4.0 -pix_fmt yuv420p \
+      -c:a aac -b:a 160k -ar 48000 -ac 1 \
+      -movflags +faststart \
+      $HOME/Videos/screen_record/ffmpeg-$(date +%Y_%m_%d_%H_%M).mkv
+
+    pkill mechvibes
+    pkill mouseClicky
+  ;;
+  * )
+    echo "Gagal Memulai..."
+    exit 1
+  ;;
+esac
