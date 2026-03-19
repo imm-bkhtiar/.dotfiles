@@ -58,36 +58,19 @@ case $XDG_SESSION_TYPE in
     pkill mouseClicky.sh
     pkill mechvibes
 
-    # sleep 0.5 
-    # echo "enable virtual mouse & mechanical keyboard sound .... "
-    # mechvibes &
-    # $HOME/.dotfiles/personal/mouse-clicky/mouseClicky.sh &
-
-    # ffmpeg -thread_queue_size 1024 \
-    #   -f x11grab -s 1366x768 -framerate 30 -i :0.0 \
-    #   -f pulse -ac 1 -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
-    #   -c:v h264 -preset superfast -b:v 8000k -bufsize 8000k -crf 23 \
-    #   -profile:v main -level 4.0 -pix_fmt yuv420p \
-    #   -c:a aac -b:a 128k -ar 48000 \
-    #   -vsync cfr -async 1 \
-    #   -movflags +faststart \
-    #   $HOME/Videos/screen_record/ffmpeg-$(date +%Y_%m_%d_%H_%M).mkv
+    sleep 0.5 
+    echo "enable virtual mouse & mechanical keyboard sound .... "
+    mechvibes &
+    $HOME/.dotfiles/personal/mouse-clicky/mouseClicky.sh &
     
-    # ffmpeg -thread_queue_size 1024 \
-    #   -f x11grab -s 1366x768 -framerate 30 -i :0.0 \
-    #   -f pulse -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
-    #   -c:v libx264 -preset ultrafast -b:v 8000k \
-    #   -crf 23 -pix_fmt yuv420p -threads:v 2 \
-    #   -c:a aac -b:a 128k -threads:a 1\
-    #   $HOME/Videos/screen_record/ffmpeg-$(date +%Y_%m_%d_%H_%M).mkv
-
     ffmpeg -thread_queue_size 1024 \
       -f x11grab -draw_mouse 1 -s 1366x768 -framerate 30 -i :0.0 \
       -f pulse -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
-      -c:v libx264rgb -preset ultrafast -crf 20 -b:v 8000k \
-      -threads 4 -c:a aac -b:a 128k \
+      -c:v libx264rgb -preset ultrafast -crf 20 -b:v 8000k -bufsize 8000k \
+      -c:a aac -b:a 128k \
       $HOME/Videos/screen_record/ffmpeg-$(date +%Y_%m_%d_%H_%M).mkv
 
+    # GPU Recording ------------
     # ffmpeg -vaapi_device /dev/dri/renderD128 -thread_queue_size 1024 \
     #   -f x11grab -s 1366x768 -framerate 30 -i :0.0 \
     #   -f pulse -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
