@@ -1,68 +1,46 @@
-configuration {
-  filebrowser {
-    sorting-method: "fzf";
-  }
-  display-drun: "Applications";
-  display-window: "Windows";
-  drun-display-format: "{icon} {name} ";
-  font: "GeistMono Nerd Font Regular 11";
-  show-icons: true;
-  icon-thme: "Adwaita";
-}
-
-@theme "/dev/null"
-
 * {
-  bg: #111111;
-  // bg: transparent;
-  fg: #dddddd;
-
-  background-color: @bg;
-  color: @fg;
-  margin: 0;
-  spacing: 0;
-  padding: 0;
+  font-family: "GeistMono Nerd Font";
+  font-size: 11px;
 }
 
 window {
-  width: 40%;
-  border: 1px;
-  border-color: #5E9B2E;
-  background-color: rgba(0,0,0,0);
-  background-image: url("/home/immbkhtiar/BAKHTIAR/Photos/wallpaper/wallpaper11v2.png", both);
-  padding: 125 0 0;
+  background-color: #282a2e;
+  border: 1px solid #4F7E6D;
 }
 
-mainbox {
+#outer-box {
+  padding: 0px;
+}
+
+#input {
+  margin: 10px;
+  padding: 0px;
+  color: #4F7E6D;
   background-color: transparent;
 }
 
-listview {
-  padding: 10;
-  lines: 10;
-  // fixed-height: false;
-  // dynamic: true ;
+#entry {
+  padding: 2px 5px;
+  margin: 0px;
 }
 
-element {
-  padding: 2.5;
-  spacing: 2;
-  cursor: pointer;
+#entry:selected {
+  color: white;
+  background-color: transparent;
 }
 
-element selected,
-element-icon selected,
-element-text selected {
-  background-color: #5E9B2E11;
+#text {
+  color: #707880;
 }
 
-inputbar {
-  cursor: pointer;
-  padding: 10;
-  children: [entry];
+#entry:selected #text {
+  color: white;
 }
 
-entry {
-  placeholder: "Search:";
-  placeholder-color: #333333;
+#img {
+  margin-right: 8px;
+}
+
+#scroll {
+  margin: 0px 10px 10px 10px;
 }

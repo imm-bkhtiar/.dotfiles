@@ -1,0 +1,8 @@
+width=40%
+lines=10
+show=drun
+prompt=Search:
+allow_images=true
+image_size=20
+gtk_dark=true
+drun-show-actions=false
