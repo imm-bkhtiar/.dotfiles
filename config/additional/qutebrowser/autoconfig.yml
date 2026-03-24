@@ -7,6 +7,4 @@
 config_version: 2
 settings:
   content.javascript.clipboard:
-    https://gemini.google.com: access-paste
-  downloads.location.directory:
-    global: /home/immbkhtiar/Downloads
+    https://github.com: access-paste
