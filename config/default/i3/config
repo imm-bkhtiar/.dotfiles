@@ -45,7 +45,7 @@ client.unfocused $statuslinebg $statuslinebg $color2 $statuslinebg $statuslinebg
 client.focused_inactive $statuslinebg $statuslinebg $color2 $statuslinebg $statuslinebg
 
 # ========== Set Variables ==========
-set $term "st"
+set $term "xterm"
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -133,6 +133,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym $mod+Shift+Tab exec rofi -show run -p "Exec" -disable-history -theme $HOME/.config/rofi/config_flat.rasi
 
 bindsym $mod+Tab exec --no-startup-id xterm -T "app_launcher" -e bash -c "$HOME/.local/bin/app-launcher"
+
 # ========== Autostart ==========
 exec --no-startup-id i3-msg "workspace 1;exec --no-startup-id $term" 
 exec --no-startup-id i3-msg "workspace 1" 

@@ -47,27 +47,39 @@
 
 case $XDG_SESSION_TYPE in
   "wayland")
+    pkill wayvibes
+    pkill mouseClickyWayland.sh
+
+    sleep 0.5
+    wayvibes $HOME/.local/wayvibes/soundpacks/cherrymx-red-abs --background 
+    $HOME/.dotfiles/personal/mouse-clicky/mouseClickyWayland.sh &
+
     wf-recorder \
       --audio=alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
       --codec=libx264 \
       --pixel-format=yuv420p \
       --file=$HOME/Videos/screen_record/wf-$(date +%Y_%m_%d_%H_%M).mkv \
-      --params="preset=ultrafast,crf=23,profile=main,level=4.0,b=8000k,bufsize=8000k"
+      --params="preset=ultrafast,crf=23,profile:v=main,level:v=4.0,b:v=8000k,bufsize=8000k"
+
+    pkill wayvibes
+    pkill mouseClickyWayland.sh
   ;;
   "x11") 
     pkill mouseClicky.sh
     pkill mechvibes
 
-    sleep 0.5 
-    echo "enable virtual mouse & mechanical keyboard sound .... "
-    mechvibes &
-    $HOME/.dotfiles/personal/mouse-clicky/mouseClicky.sh &
+    # sleep 0.5 
+    # mechvibes &
+    # $HOME/.dotfiles/personal/mouse-clicky/mouseClicky.sh &
     
+    # CPU Recording ------------
     ffmpeg -thread_queue_size 1024 \
-      -f x11grab -draw_mouse 1 -s 1366x768 -framerate 30 -i :0.0 \
+      -f x11grab -s 1366x768 -framerate 30 -i :0.0 \
       -f pulse -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
-      -c:v libx264rgb -preset ultrafast -crf 20 -b:v 8000k -bufsize 8000k \
-      -c:a aac -b:a 128k \
+      -c:v libx264 -preset ultrafast -b:v 5000k -bufsize 5000k -crf 23 \
+      -profile:v main -level 4.0 -pix_fmt yuv420p \
+      -movflags +faststart \
+      -c:a aac -b:a 128k -ac 1 \
       $HOME/Videos/screen_record/ffmpeg-$(date +%Y_%m_%d_%H_%M).mkv
 
     # GPU Recording ------------
@@ -75,8 +87,7 @@ case $XDG_SESSION_TYPE in
     #   -f x11grab -s 1366x768 -framerate 30 -i :0.0 \
     #   -f pulse -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
     #   -vf 'format=nv12,hwupload' \
-    #   -c:v h264_vaapi -qp 24 -preset ultrafast \
-    #   -profile:v main \
+    #   -c:v h264_vaapi -qp 28 -preset ultrafast -g 30 -bf 0 \
     #   -c:a aac -b:a 128k -ar 48000 -ac 1 \
     #   $HOME/Videos/screen_record/ffmpeg-gpu-$(date +%Y_%m_%d_%H_%M).mkv
 
