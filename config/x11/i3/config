@@ -159,14 +159,16 @@ for_window [class="obs"] floating enable
 for_window [class="Xarchiver"] floating enable
 for_window [class="Gpick"] floating enable
 for_window [class="emoji_picker"] floating enable
-for_window [title="app_launcher"] floating enable, resize set 600 300, move position center
 for_window [class="Thunar" title="File Operation Progress"] floating enable, sticky enable, move absolute position 10 px 10 px, border pixel 2
 for_window [class="^.*"] border pixel 1.5 
 
+for_window [title="app_launcher"] floating enable, resize set 600 300, move position center
+# for_window [title="Eww - bar"] floating enable
 
 # ========== Gaps ==========
 gaps outer 5
 gaps inner 5
+gaps bottom 0
 
 workspace 5 gaps vertical 50
 workspace 5 gaps horizontal 75
