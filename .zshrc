@@ -46,7 +46,7 @@ alias rm="rm -I"
 
 # Alias Section
 # alias music="TERM=xterm-256color musikcube"
-alias mpv="mpv --profile=fast --hwdec=vaapi"
+# alias mpv="mpv --profile=fast --hwdec=vaapi"
 alias codir="cd $HOME/BAKHTIAR/source-code/ && cd $1"
 alias app="cd $HOME/BAKHTIAR/Apps/portable/"
 alias update="sudo apt update && sudo apt upgrade"
@@ -127,6 +127,7 @@ function coding() {
   fi
 }
 
-function ytd() {
-  yt-dlp -S res:720,ext:mp4 $1 --cookies-from-browser chromium:$HOME/.local/share/qutebrowser --js-runtime node -o "$HOME/Videos/Youtube/%(title)s.%(ext)s"
+function yd() {
+  yt-dlp -S vcodec:avc,res:720,ext:mp4 $1 --cookies-from-browser chromium:$HOME/.local/share/qutebrowser --js-runtime node -o "/mnt/windows/Videos/Youtube/%(title)s.%(ext)s"
+  # yt-dlp -S vcodec:avc,res:720,ext:mp4 $1 --cookies-from-browser firefox:$HOME/.mozilla/firefox/ --js-runtime node -o "$HOME/Videos/Youtube/%(title)s.%(ext)s"
 }

@@ -21,21 +21,13 @@ selected=$(grep -hE '^Name=|^Exec=' /usr/share/applications/*.desktop ~/.local/s
     sed 's/Name=//g;s/Exec=//g' | \
     fzf --delimiter='|' --with-nth=1 --reverse --border --prompt="Launch: " | \
     cut -d'|' -f2 | \
-    sed 's/%.//g')
+    sed 's/%.//g' )
+ 
+printf $selected > $HOME/.cache/app-launcher
+
 
 # 3. EKSEKUSI APLIKASI
 if [ -n "$selected" ]; then
     # setsid memastikan aplikasi tetap jalan meski terminal fzf ditutup
     setsid bash -c "$selected" >/dev/null 2>&1 &
 fi
-
-# selected=$(grep -hE '^Name=|^Exec=' /usr/share/applications/*.desktop | \
-#     sed 'N;s/\n/|/' | \
-#     sed 's/Name=//g;s/Exec=//g' | \
-#     fzf --delimiter='|' --with-nth=1 --reverse --border | \
-#     cut -d'|' -f2 | \
-#     sed 's/%.//g')
-#
-# if [ -n "$selected" ]; then
-#   setsid $selected >/dev/null 2>&1 &
-# fi

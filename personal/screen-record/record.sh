@@ -68,9 +68,9 @@ case $XDG_SESSION_TYPE in
     pkill mouseClicky.sh
     pkill mechvibes
 
-    # sleep 0.5 
-    # mechvibes &
-    # $HOME/.dotfiles/personal/mouse-clicky/mouseClicky.sh &
+    sleep 0.5 
+    mechvibes &
+    $HOME/.dotfiles/personal/mouse-clicky/mouseClicky.sh &
     
     # CPU Recording ------------
     ffmpeg -thread_queue_size 1024 \

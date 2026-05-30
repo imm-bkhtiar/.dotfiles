@@ -3,3 +3,9 @@
 	name = imm-bkhtiar
 [credential]
 	helper = store
+[core]
+	editor = nvim -f
+[diff]
+	tool = nvim
+[difftool "nvim"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
