@@ -45,7 +45,8 @@ client.unfocused $statuslinebg $statuslinebg $color2 $statuslinebg $statuslinebg
 client.focused_inactive $statuslinebg $statuslinebg $color2 $statuslinebg $statuslinebg
 
 # ========== Set Variables ==========
-set $term "xterm"
+# set $term "xterm"
+set $term "st"
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -161,6 +162,7 @@ for_window [class="Xarchiver"] floating enable
 for_window [class="Gpick"] floating enable
 for_window [class="emoji_picker"] floating enable
 for_window [class="Thunar" title="File Operation Progress"] floating enable, sticky enable, move absolute position 10 px 10 px, border pixel 2
+for_window [class="firefox" title="Library"] floating enable, sticky enable, move absolute position 10 px 10 px, border pixel 2
 for_window [class="^.*"] border pixel 1.5 
 
 for_window [title="app_launcher"] floating enable, resize set 600 300, move position center
