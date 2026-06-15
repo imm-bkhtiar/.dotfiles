@@ -25,11 +25,11 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 250
+    width = 300
 
     # The height of a single notification, excluding the frame.
     # dynamic height from 0 to 300
-    height = (75,95)
+    height = (80, 100)
     # constant height of 300
     # height = 300
     # NOTE: Dunst from version 1.11 and older don't support dynamic height
@@ -41,7 +41,7 @@
     # Offset from the origin
     # NOTE: Dunst from version 1.11 and older use this alternative notation
     # offset = 10x50
-    offset = (10, 50)
+    offset = (5,5) 
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -98,26 +98,27 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 8
+    padding = 16
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 16
+    
 
     # Padding between text and icon.
-    text_icon_padding = 0
+    text_icon_padding = 16
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 1
+    frame_width = 2 
 
     # Defines color of the frame around the notification window.
-    frame_color = "#4F7E6D"
+    frame_color = "#B4BBD4"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
     # of size frame_width will be drawn around each notification instead.
     # Click events on gaps do not currently propagate to applications below.
-    gap_size = 0
+    gap_size = 4
 
     # Define a color for the separator.
     # possible values are:
@@ -133,7 +134,7 @@
     #  * urgency_ascending: sort by urgency (low then normal then critical)
     #  * urgency_descending: sort by urgency (critical then normal then low)
     #  * update: sort by update (most recent always at the top)
-    sort = yes
+    sort = update
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -144,7 +145,7 @@
 
     ### Text ###
 
-    font = GeistMono Nerd Font 9 
+    font = GeistMono Nerd Font 9
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -192,7 +193,7 @@
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
-    vertical_alignment = center
+    vertical_alignment = top
 
     # Show age of message if message is older than show_age_threshold
     # seconds.
@@ -235,7 +236,7 @@
     min_icon_size = 32
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 32
+    max_icon_size = 64
 
     # Paths to default icons (only necessary when not using recursive icon lookup)
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
@@ -271,7 +272,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 5
+    corner_radius = 0 
 
     # Define which corners to round when drawing the window. If the corner radius
     # is set to 0 this option will be ignored.
@@ -341,14 +342,14 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#222222"
+    background = "#2D353B"
     foreground = "#888888"
     timeout = 10
     # Icon for notifications with low urgency
     default_icon = dialog-information
 
 [urgency_normal]
-    background = "#1b2112"
+    background = "#2D353B"
     foreground = "#ffffff"
     timeout = 10
     override_pause_level = 30
