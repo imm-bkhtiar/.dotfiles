@@ -1,0 +1,21 @@
+#!/bin/env bash
+
+# Background
+nitrogen --restore &
+
+# Settings
+xfsettingsd &
+picom &
+dunst &
+pulseaudio --start &
+brightnessctl set 40%
+
+# XDG autostart
+dex --autostart --environment Openbox &
+
+# Tint2
+tint2 &
+
+# Polybar script tidak diperlukan lagi
+# ~/.config/i3/polybar.sh &
+# ~/.config/i3/polybarStateCheck.sh &

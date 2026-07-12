@@ -62,7 +62,7 @@ set $ws10 "10"
 # ========== Keybind  ==========
 bindsym $mod+x exec --no-startup-id $HOME/.config/i3/polybarSwitch.sh "toggle-power" 
 bindsym $mod+m exec --no-startup-id $HOME/.config/i3/polybarSwitch.sh "toggle-mode"
-bindsym $mod+e exec pcmanfm
+bindsym $mod+e exec dolphin
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+s exec flameshot gui
 bindsym $mod+Return exec --no-startup-id $term
@@ -145,12 +145,13 @@ exec --no-startup-id pulseaudio --start &
 exec --no-startup-id autotiling &
 exec --no-startup-id exec brightnessctl set 40%
 exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id exec "/home/immbkhtiar/battery-allert.sh" &
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i $HOME/BAKHTIAR/Photos/wallpaper/wallpaper15v2.png --nofork 
 exec_always --no-startup-id $HOME/.config/i3/polybar.sh
 exec_always --no-startup-id sleep 2.5 && $HOME/.config/i3/polybarStateCheck.sh
 
 # Background Set
-exec --no-startup-id nitrogen --restore
+exec_always --no-startup-id nitrogen --restore
 # exec --no-startup-id feh --bg-fill "$HOME/BAKHTIAR/Photos/wallpaper/wallpaper11.png"
 
 # ========== Window Behavior ==========
@@ -163,6 +164,7 @@ for_window [class="vlc"] floating enable
 for_window [class="Xarchiver"] floating enable
 for_window [class="Gpick"] floating enable
 for_window [class="emoji_picker"] floating enable
+for_window [class="qBittorrent" title="^(?!qBit).*"] floating enable, border pixel 2
 for_window [class="Thunar" title="File Operation Progress"] floating enable, sticky enable, move absolute position 10 px 10 px, border pixel 2
 for_window [class="firefox" title="Library"] floating enable, sticky enable, move absolute position 10 px 10 px, border pixel 2
 for_window [class="^.*"] border pixel 1.5 
