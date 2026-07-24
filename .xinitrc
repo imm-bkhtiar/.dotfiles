@@ -8,9 +8,9 @@ pactl load-module module-bluetooth-discover
 export XDG_DATA_DIRS="/usr/share:/usr/local/share"
 export XDG_CURRENT_DESKTOP=generic
 export XDG_SESSION_TYPE=x11
+# export QT_QPA_PLATFORMTHEME=qt6ct
 
 # window manager
 # exec openbox-session
 # exec sway
 exec dbus-run-session -- i3
-

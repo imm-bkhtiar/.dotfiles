@@ -4,7 +4,7 @@
 nitrogen --restore &
 
 # Settings
-xfsettingsd &
+# xfsettingsd &
 picom &
 dunst &
 pulseaudio --start &

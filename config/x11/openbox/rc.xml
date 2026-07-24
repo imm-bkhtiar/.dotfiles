@@ -25,7 +25,7 @@
        mouse into it, also raise the window -->
   </focus>
   <placement>
-    <policy>Smart</policy>
+    <policy>UnderMouse</policy>
     <!-- 'Smart' or 'UnderMouse' -->
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Nightmare-03</name>
+    <name>Syscrash</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -57,21 +57,21 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>sans</name>
+      <name>GeistMono Nerd Font</name>
       <size>8</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>sans</name>
+      <name>GeistMono Nerd Font</name>
       <size>8</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
@@ -123,10 +123,10 @@
     <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
-      <!-- set names up here if you want to, like this:
-    <name>desktop 1</name>
-    <name>desktop 2</name>
-    -->
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -153,10 +153,10 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>4</top>
-    <bottom>4</bottom>
-    <left>4</left>
-    <right>4</right>
+    <top>5</top>
+    <bottom>35</bottom>
+    <left>5</left>
+    <right>5</right>
   </margins>
   <dock>
     <position>TopLeft</position>
@@ -321,16 +321,13 @@
         <direction>down</direction>
       </action>
     </keybind>
-
-  <!-- Keybindings for running applications -->
-  <!-- ========== Shorcut ========== -->
-
+    <!-- Keybindings for running applications -->
+    <!-- ========== Shorcut ========== -->
     <keybind key="W-Return">
       <action name="Execute">
         <command>st</command>
       </action>
     </keybind>
-
     <keybind key="W-e">
       <action name="Execute">
         <startupnotify>
@@ -340,43 +337,36 @@
         <command>dolphin</command>
       </action>
     </keybind>
-
     <keybind key="W-Tab">
       <action name="Execute">
         <command>rofi -show drun -p "Apps" -disable-history -theme ~/.config/rofi/config_flat.rasi</command>
       </action>
     </keybind>
-      
     <keybind key="A-Up">
       <action name="Execute">
         <command>pactl set-sink-volume @DEFAULT_SINK@ +10%</command>
       </action>
     </keybind>
-
     <keybind key="A-Down">
       <action name="Execute">
         <command>pactl set-sink-volume @DEFAULT_SINK@ -10%</command>
       </action>
     </keybind>
-
     <keybind key="A-Left">
       <action name="Execute">
         <command>brightnessctl set 5%-</command>
       </action>
     </keybind>
-
     <keybind key="A-Right">
       <action name="Execute">
         <command>brightnessctl set 5%+</command>
       </action>
     </keybind>
-
     <keybind key="A-m">
       <action name="Execute">
         <command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>
       </action>
     </keybind>
-
     <!-- Launch scrot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">

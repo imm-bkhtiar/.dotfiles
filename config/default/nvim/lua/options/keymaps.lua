@@ -53,6 +53,9 @@ keymap.set('n', '<leader>tx', ':tabclose<CR>', opts) -- close current tab
 keymap.set('n', '<leader>tn', ':tabn<CR>', opts) --  go to next tab
 keymap.set('n', '<leader>tp', ':tabp<CR>', opts) --  go to previous tab
 
+keymap.set('n', '<A-o>', 'o<Esc>', opts) --  make new line but not insert mode 
+keymap.set('n', '<A-O>', 'O<Esc>', opts) --  make new line but not insert mode 
+
 -- esc remap
 -- keymap.set("i", "jk", "<Esc>", opts)
 keymap.set("n", "<Esc>", "<Esc>:let @/ = \"\"<CR>", opts)

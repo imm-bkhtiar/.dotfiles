@@ -131,3 +131,11 @@ function yd() {
   yt-dlp -S vcodec:avc,res:720,ext:mp4 $1 --cookies-from-browser chromium:$HOME/.local/share/qutebrowser --js-runtime node -o "/mnt/windows/Videos/Youtube/%(title)s.%(ext)s"
   # yt-dlp -S vcodec:avc,res:720,ext:mp4 $1 --cookies-from-browser firefox:$HOME/.mozilla/firefox/ --js-runtime node -o "$HOME/Videos/Youtube/%(title)s.%(ext)s"
 }
+
+function btw() {
+  echo "Setting Boot To Windows ( BTW ) Next"
+  sleep 2
+  sudo efibootmgr -n 0000
+  sleep 1
+  echo "Succes..., Time to BTW (Boot To Windows)"
+}
