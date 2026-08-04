@@ -1,3 +1,13 @@
+@define-color primary #7C8CAE;
+@define-color background #282A2E;
+@define-color background-alt #373B41;
+@define-color foreground #C6CCE5;
+@define-color primary #7C8CAE;
+@define-color secondary #4B696A;
+@define-color alert #A54242;
+@define-color power #D0C0A0;
+@define-color disabled #707880;
+
 * {
   font-family: "GeistMono Nerd Font";
   font-size: 11px;
@@ -14,12 +24,12 @@
 
 window#waybar {
   background: transparent;
-  background-color: #282A2E;
+  background-color: @background;
   /* border-radius: 25px; */
 }
 
 #workspaces {
-  background-color: #282A2E;
+  background-color: #373B41;
   border-radius: 25px;
   padding: 0 6px;
 }
@@ -31,13 +41,13 @@ window#waybar {
 }
 
 #workspaces button.focused label {
-  color: #c3c769;
+  color: @primary;
 }
 
 
 #window label{
   padding-left: 6px ;
-  color: #c3c769;
+  color: @primary;
 }
 
 #memory,
@@ -53,13 +63,13 @@ window#waybar {
   padding: 0 10px;
   margin-left: 3px;
   margin-right: 3px;
-  color: #c3c769;
+  color: @foreground;
   /* background-color: #282A2E; */
   /* border-radius: 25px; */
 }
 
 #clock {
-  background: #c3c769;
+  background: @primary;
   color: #282A2E;
   padding: 0 10px;
 }

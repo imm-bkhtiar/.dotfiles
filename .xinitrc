@@ -11,6 +11,6 @@ export XDG_SESSION_TYPE=x11
 # export QT_QPA_PLATFORMTHEME=qt6ct
 
 # window manager
-# exec openbox-session
+# exec openbox-sessio3
 # exec sway
 exec dbus-run-session -- i3
