@@ -1,5 +1,9 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec_always dbus-update-activation-environment --systemd \
+  WAYLAND_DISPLAY \
+  XDG_CURRENT_DESKTOP=sway \
+  XDG_SESSION_DESKTOP=sway
+
 set $mod Mod4
 font GeistMono Nerd Font Bold 6 
 
@@ -18,6 +22,9 @@ floating_modifier $mod
 # bindsym $mod+Shift+Tab exec wofi
 
 bindsym $mod+n exec $HOME/.config/rofi/modules/noteMenu/noteMenu.sh
+bindsym $mod+y exec $HOME/.dotfiles/personal/fuzzel-menu/fuzzel-menu.sh "Youtube"
+bindsym $mod+m exec $HOME/.dotfiles/personal/fuzzel-menu/fuzzel-menu.sh "Music"
+bindsym $mod+a exec $HOME/.dotfiles/personal/fuzzel-menu/fuzzel-menu.sh "Anime"
 # bindsym $mod+c exec $HOME/.config/rofi/modules/configMenu/configMenu.sh
 bindsym $mod+Tab exec fuzzel
 # bindsym $mod+Shift+Tab exec rofi -show run -p "Exec" -disable-history -theme $HOME/.config/rofi/config_flat.rasi
@@ -93,8 +100,8 @@ bindsym $mod+Shift+r reload
 bindsym $mod+e exec dolphin 
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+s exec flameshot 
-bindsym $mod+x exec --no-startup-id $HOME/.config/waybar/waybarSwitch.sh "toggle-power" 
-bindsym $mod+m exec --no-startup-id $HOME/.config/waybar/waybarSwitch.sh "toggle-mode"
+# bindsym $mod+x exec --no-startup-id $HOME/.config/waybar/waybarSwitch.sh "toggle-power" 
+# bindsym $mod+m exec --no-startup-id $HOME/.config/waybar/waybarSwitch.sh "toggle-mode"
 
 # Audio and Brighness shortcut
 bindsym Mod1+Up exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -161,10 +168,11 @@ for_window [app_id="dolphin"] floating enable
 for_window [app_id="xarchiver"] floating enable
 for_window [app_id="gpick"] floating enable
 for_window [app_id="com.obsproject.Studio"] floating enable, move position center, resize set 900 600
-for_window [title="MyNote"] floating enable, move position center, resize set 900 600
+for_window [app_id="kitty" title="MyNote"] floating enable, move position center, resize set 900 600
 for_window [app_id="app_launcher"] floating enable, move position center, resize set 600 400
 for_window [app_id="thunar" title="File Operation Progress"] floating enable, sticky enable, move position 10 10, resize set 400 150, border pixel 2
 for_window [app_id="^.*"] border pixel 1
+for_window [app_id="mpv"] floating enable, resize set width 1200 px height 700 px, move position center
 
 # ====== Appearance ======
 client.focused   $background $color2 $background $background $background

@@ -59,13 +59,29 @@ window#waybar {
 #custom-power,
 #tray,
 #clock,
+#custom-mpd-prev,
+#custom-mpd-next,
+#custom-mpd-toggle,
+#custom-mpd-stop,
 #mpd {
   padding: 0 10px;
   margin-left: 3px;
   margin-right: 3px;
   color: @foreground;
-  /* background-color: #282A2E; */
+  /* background-color: @primary; */
   /* border-radius: 25px; */
+}
+
+#custom-mpd-prev,
+#custom-mpd-play,
+#custom-mpd-next {
+    min-width: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+#custom-mpd-next {
+  margin-right: 10px;
 }
 
 #clock {
@@ -78,3 +94,4 @@ window#waybar {
   color: #dddddd;
   padding: 0 8px;
 }
+
