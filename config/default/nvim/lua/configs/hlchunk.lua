@@ -8,7 +8,7 @@ require('hlchunk').setup({
   blank = {
     enable = true,
     chars = {
-      " "
+      " ",
     },
     style = {
       { bg = "#434437" },

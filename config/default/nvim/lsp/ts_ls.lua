@@ -7,9 +7,10 @@ return {
   init_options = { hostInfo = 'neovim' },
   cmd = { 'typescript-language-server', '--stdio' },
   filetypes = {
+    'html',
     'javascript',
-    'javascriptreact',
     'typescript',
+    'javascriptreact',
     'typescriptreact',
   },
   root_dir = function(bufnr, on_dir)

@@ -52,6 +52,8 @@ vim.opt.updatetime = 50
 -- vim.opt.colorcolumn = "80"
 
 -- netrw settings
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 -- vim.g.netrw_fastmap = 0
 vim.g.netrw_banner = 1 -- set information banner in above :Ex to false
 vim.g.netrw_altv = 1

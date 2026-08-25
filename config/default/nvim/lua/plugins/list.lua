@@ -15,7 +15,7 @@ return {
   {
     "mason-org/mason.nvim",
     dependencies = {
-      "mason-org/mason-lspconfig",
+      "mason-org/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig"
     },
     config = function()
@@ -27,6 +27,7 @@ return {
     dependencies = {
       'brenoprata10/nvim-highlight-colors',
     },
+    version = '1.*',
     config = function ()
       require "configs.blinkcmp"
     end
@@ -69,28 +70,29 @@ return {
       "nvim-lua/plenary.nvim"
     },
     branch = "harpoon2",
+    enabled = false,
     config = function ()
       require "configs.harpoon"
     end
-    },
-    {
-      'numToStr/Comment.nvim',
-      config = function ()
+  },
+  {
+    'numToStr/Comment.nvim',
+    config = function ()
       require "configs.comment"
-      end
+    end
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-tree/nvim-web-devicons", -- optional, but recommended
     },
-    {
-      'stevearc/oil.nvim',
-      ---@module 'oil'
-      ---@type oil.SetupOpts,
-      dependencies = { { "echasnovski/mini.icons", opts = {} } },
-      enabled = true,
-      -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
-      -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
-      lazy = false,
-      config = function ()
-        require "configs.oilnvim"
-      end
+    lazy = false, -- neo-tree will lazily load itself
+    config = function ()
+      require "configs.neotree"
+    end
   },
   {
       'MeanderingProgrammer/render-markdown.nvim',
@@ -114,14 +116,6 @@ return {
       require "configs.undotree"
     end
   },
-  {
-    "rebelot/kanagawa.nvim",
-    priority = 1000,
-    enabled = true,
-    config = function()
-      require "configs.color"
-    end
-  }
 }
   -- {
   --   "iamcco/markdown-preview.nvim",

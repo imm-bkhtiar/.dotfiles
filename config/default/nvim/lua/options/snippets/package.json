@@ -3,9 +3,7 @@
 	"contributes": {
 		"snippets": [
 			{
-				"language": [
-					"html", "php"
-				],
+				"language": [ "html", "php" ],
 				"path": "./custom/html.json"
 			}
     ]

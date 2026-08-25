@@ -12,25 +12,36 @@ local function setColor(color)
   vim.cmd.colorscheme(color)
 
   vim.api.nvim_set_hl(0, "Normal", { bg = 'none'})
+  vim.api.nvim_set_hl(0, "NormalNC", { bg = 'none'})
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = 'none'})
   -- vim.api.nvim_set_hl(0, "", { bg = 'none'})
   vim.api.nvim_set_hl(0, "cursorline", { bg = 'none'})
-  vim.api.nvim_set_hl(0, "Statusline", { bg = 'none', bold = true})
-  vim.api.nvim_set_hl(0, "WinSeparator", {fg = '#5E9B2E', bg = 'none'})
+  vim.api.nvim_set_hl(0, "WinSeparator", {fg = '#373B41', bg = 'none'})
   vim.api.nvim_set_hl(0, "Folded", { fg = "#ffffff",bg = 'none'})
   vim.api.nvim_set_hl(0, "SignColumn", { fg = "#333333",bg = 'none'})
   vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = "#333333",bg = 'none'})
-  vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#dddddd",bg = 'none'})
-  vim.api.nvim_set_hl(0, "LineNr", { fg = "#888888",bg = 'none'})
+  vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#C6CCE5",bg = 'none'})
+  vim.api.nvim_set_hl(0, "LineNr", { fg = "#373B41",bg = 'none'})
+
+  vim.api.nvim_set_hl(0, "Statusline", { bg = 'none',})
+  vim.api.nvim_set_hl(0, "StatuslineNC", { bg = 'none'})
 
   -- blink cmp apperance
-  -- vim.api.nvim_set_hl(0, "BlinkCmpMenu", { fg = "#aaaaaa", bg = "none"})
-  -- vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#5E9B2E"})
-  -- vim.api.nvim_set_hl(0, "BlinkCmpLabel", { fg = "#5E9B2E"})
-  -- vim.api.nvim_set_hl(0, "BlinkCmpDoc", { fg = "#aaaaaa"})
-  -- vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { fg = "#466a29"})
-  -- vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", {bg = "none"})
+  vim.api.nvim_set_hl(0, "BlinkCmpMenu", { fg = "#C6CCE5", bg = "none"})
+  vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#C6CCE5", bg = "none" })
+  vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { fg = "#C6CCE5", bg = "none"})
+  vim.api.nvim_set_hl(0, "BlinkCmpLabel", { fg = "#C6CCE5", bg = "none"})
+  vim.api.nvim_set_hl(0, "BlinkCmpDoc", { fg = "#aaaaaa", bg = "none" })
+  vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { fg = "#C6CCE5", bg = "none" })
+  vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", {bg = "none"})
+
+  -- blink cmp apperance
+  vim.api.nvim_set_hl(0, "NeoTreeNormal", {fg = "#C6CCE5", bg = "none"})
+  vim.api.nvim_set_hl(0, "NeoTreeIndentMarker", {fg = "#373B41", bg = "none"})
+  vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", {fg = "#de5959", bg = "none"})
+  vim.api.nvim_set_hl(0, "NeoTreeGitModified", {fg = "#72a787", bg = "none"})
 end
 
 
-setColor("matchalk")
+setColor("challenger_deep")
+

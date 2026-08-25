@@ -15,6 +15,7 @@ else
 
   -- call user settings
   require("main")
+
   -- call plugins/list
   local plugins = require("plugins.list")
   require("lazy").setup({plugins})

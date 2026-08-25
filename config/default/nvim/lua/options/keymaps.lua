@@ -76,7 +76,7 @@ keymap.set("v", '<M-j>', ":m '>+1<CR>gv=gv")
 keymap.set("v", '<M-k>', ":m '<-2<CR>gv=gv")
 
 -- keymap.set('n', '<leader>e', "<cmd>Ex<Cr>", opts)
-keymap.set('n', '<leader>e', "<cmd>Oil<Cr>", opts)
+-- keymap.set('n', '<leader>e', "<cmd>Oil<Cr>", opts)
 
 -- marks
 keymap.set('n', '<leader>am', ':marks<cr>' )

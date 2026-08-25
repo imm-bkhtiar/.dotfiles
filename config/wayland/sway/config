@@ -25,6 +25,7 @@ bindsym $mod+n exec $HOME/.config/rofi/modules/noteMenu/noteMenu.sh
 bindsym $mod+y exec $HOME/.dotfiles/personal/fuzzel-menu/fuzzel-menu.sh "Youtube"
 bindsym $mod+m exec $HOME/.dotfiles/personal/fuzzel-menu/fuzzel-menu.sh "Music"
 bindsym $mod+a exec $HOME/.dotfiles/personal/fuzzel-menu/fuzzel-menu.sh "Anime"
+bindsym $mod+s exec $HOME/.dotfiles/personal/fuzzel-menu/fuzzel-menu.sh "Series"
 # bindsym $mod+c exec $HOME/.config/rofi/modules/configMenu/configMenu.sh
 bindsym $mod+Tab exec fuzzel
 # bindsym $mod+Shift+Tab exec rofi -show run -p "Exec" -disable-history -theme $HOME/.config/rofi/config_flat.rasi

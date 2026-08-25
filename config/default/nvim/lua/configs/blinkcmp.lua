@@ -11,12 +11,18 @@ require('blink.cmp').setup({
     nerd_font_variant = 'mono'
   },
 
-  snippets = {
-    preset = 'luasnip',
-  },
 
   sources = {
-    default = { 'lsp', 'path', 'snippets', 'buffer' },
+    default = { 'lsp', 'path', 'snippets' } --  'buffer' },
+  },
+
+  snippets = {
+    preset = 'luasnip',
+    -- preset = "default",
+    -- extended_filetypes = {
+    --   typescriptreact = {"html", "css"},
+    --   javascriptreact = {"html", "css"},
+    -- }
   },
 
   completion = {
@@ -41,33 +47,56 @@ require('blink.cmp').setup({
       border = "single",
       winblend = 0,
       draw = {
-        padding = 1,
+        padding = 2,
         gap = 2,
         treesitter = { "lsp" },
+        columns = {
+          { "kind_icon" },
+          { "label", gap = 2}
+        },
         components = {
           kind_icon = {
-            text = function (ctx)
-              local icon = ctx.kind_icon
-              if ctx.item.source_name == 'LSP' then
-                local color_item = require("nvim-highlight-colors").format(ctx.item.documentation, {kind = ctx.kind})
-                if color_item and color_item.abbr ~= "" then
-                  icon = color_item.abbr
-                end
-              end
-              return icon .. ctx.icon_gap
+            text = function(ctx)
+              return ctx.kind_icon
             end,
-            highlight = function (ctx)
-              local highlight = "BlinkCmpKind" .. ctx.kind
-              if ctx.item.source_name == "LSP" then
-                local color_item = require("nvim-highlight-colors").format(ctx.item.documentation, {kind = ctx.kind})
-                if color_item and color_item.abbr_hl_group then
-                  highlight = color_item.abbr_hl_group
-                end
-              end
-              return highlight
-            end
-          }
-        }
+          },
+
+          label = {
+            text = function(ctx)
+              return ctx.label
+            end,
+          },
+
+          label_description = {
+            text = function(ctx)
+              return ctx.label_description
+            end,
+          },
+        },
+        -- components = {
+        --   kind_icon = {
+        --     text = function (ctx)
+        --       local icon = ctx.kind_icon
+        --       if ctx.item.source_name == 'LSP' then
+        --         local color_item = require("nvim-highlight-colors").format(ctx.item.documentation, {kind = ctx.kind})
+        --         if color_item and color_item.abbr ~= "" then
+        --           icon = color_item.abbr
+        --         end
+        --       end
+        --       return icon .. ctx.icon_gap
+        --     end,
+        --     highlight = function (ctx)
+        --       local highlight = "BlinkCmpKind" .. ctx.kind
+        --       if ctx.item.source_name == "LSP" then
+        --         local color_item = require("nvim-highlight-colors").format(ctx.item.documentation, {kind = ctx.kind})
+        --         if color_item and color_item.abbr_hl_group then
+        --           highlight = color_item.abbr_hl_group
+        --         end
+        --       end
+        --       return highlight
+        --     end
+        --   }
+        -- }
       },
     },
     documentation = {

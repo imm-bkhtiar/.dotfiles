@@ -1,4 +1,5 @@
-require("mason").setup()
+require("mason").setup({})
+
 require("mason-lspconfig").setup({
   ensure_installed = {
     "html",
@@ -9,11 +10,12 @@ require("mason-lspconfig").setup({
     "emmet_ls",
     "tailwindcss"
   },
+
   ui = {
     icons = {
       package_installed = "✓",
       package_pending = "➜",
       package_uninstalled = "✗"
     }
-  }
+  },
 })

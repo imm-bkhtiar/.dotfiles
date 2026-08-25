@@ -6,3 +6,5 @@ require("options.apperance")
 require("options.cursor") -- require("options.comment")
 require("options.statusline")
 -- require("options.term")
+--
+

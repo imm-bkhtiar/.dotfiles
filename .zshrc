@@ -21,7 +21,14 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct
 unsetopt correct_all
 
+
 # Export section
+
+# bun completions
+[ -s "/home/immbkhtiar/.bun/_bun" ] && source "/home/immbkhtiar/.bun/_bun"
+
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:/usr/sbin"
@@ -140,3 +147,4 @@ function btw() {
   sleep 1
   echo "Succes..., Time to BTW (Boot To Windows)"
 }
+

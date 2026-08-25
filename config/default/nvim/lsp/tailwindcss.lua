@@ -1,6 +1,6 @@
 return {
   default_config = {
-    cmd = { 'tailwindcss-language-server', '--stdio' },
+    cmd = {'tailwindcss-language-server', '--stdio' },
     -- filetypes copied and adjusted from tailwindcss-intellisense
     filetypes = {
       'aspnetcorerazor',
