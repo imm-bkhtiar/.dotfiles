@@ -14,7 +14,10 @@ local function setColor(color)
   vim.api.nvim_set_hl(0, "Normal", { bg = 'none'})
   vim.api.nvim_set_hl(0, "NormalNC", { bg = 'none'})
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = 'none'})
+  vim.api.nvim_set_hl(0, "MasonBorder", { fg = "#C6CCE5", bg = 'none'})
+  vim.api.nvim_set_hl(0, "LazyBorder", { fg = "#C6CCE5", bg = 'none'})
   -- vim.api.nvim_set_hl(0, "", { bg = 'none'})
+  --
   vim.api.nvim_set_hl(0, "cursorline", { bg = 'none'})
   vim.api.nvim_set_hl(0, "WinSeparator", {fg = '#373B41', bg = 'none'})
   vim.api.nvim_set_hl(0, "Folded", { fg = "#ffffff",bg = 'none'})
@@ -22,9 +25,13 @@ local function setColor(color)
   vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = "#333333",bg = 'none'})
   vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#C6CCE5",bg = 'none'})
   vim.api.nvim_set_hl(0, "LineNr", { fg = "#373B41",bg = 'none'})
+  vim.api.nvim_set_hl(0, "MatchParen", { fg = "#C6CCE5", bg = "#373B41", bold = true})
 
   vim.api.nvim_set_hl(0, "Statusline", { bg = 'none',})
   vim.api.nvim_set_hl(0, "StatuslineNC", { bg = 'none'})
+
+  vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#282e39", bold = true })
+  vim.api.nvim_set_hl(0, "Title", { fg = "#C6CCE5", bold = true })
 
   -- blink cmp apperance
   vim.api.nvim_set_hl(0, "BlinkCmpMenu", { fg = "#C6CCE5", bg = "none"})

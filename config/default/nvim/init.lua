@@ -18,5 +18,11 @@ else
 
   -- call plugins/list
   local plugins = require("plugins.list")
-  require("lazy").setup({plugins})
+  require("lazy").setup(
+    {plugins},
+    {
+      ui = {
+        border = "rounded"
+      },
+  })
 end

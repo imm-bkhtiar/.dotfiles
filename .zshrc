@@ -1,4 +1,3 @@
-
 # Created by newuser for 5.9
 # Default Settings export ZSH="$HOME/.oh-my-zsh"
 # source $ZSH/oh-my-zsh.sh
@@ -18,11 +17,9 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
 unsetopt correct
 unsetopt correct_all
-
-
-# Export section
 
 # bun completions
 [ -s "/home/immbkhtiar/.bun/_bun" ] && source "/home/immbkhtiar/.bun/_bun"
@@ -38,23 +35,18 @@ export PATH="$PATH:$HOME/.local/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.dotnet/"
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 export PKG_CONFIG_PATH=":/usr/lib/x86_64-linux-gnu/pkgconfig"
 
 #ls settings
 eval "$(dircolors -b $HOME/.dircolors)"
-alias la="ls -a"
+alias la="ls -hla"
 alias ls="ls --color=auto"
-alias ll="ls -l"
-
-#rm settings
-alias rm="rm -I"
+alias ll="ls -shl"
 
 # Alias Section
-# alias music="TERM=xterm-256color musikcube"
-# alias mpv="mpv --profile=fast --hwdec=vaapi"
 alias codir="cd $HOME/BAKHTIAR/source-code/ && cd $1"
 alias app="cd $HOME/BAKHTIAR/Apps/portable/"
 alias update="sudo apt update && sudo apt upgrade"
@@ -62,14 +54,6 @@ alias shutdown="systemctl poweroff"
 alias reboot="systemctl reboot"
 alias logout="i3-msg exit"
 alias scrcpy="scrcpy --video-encoder=OMX.google.h264.encoder"
-
-# Promp
-
-# normal="%{\e[0m%}"                   # Reset
-# white="%{\e[1;37m%}"                 # white bold
-# clock="%{\e[38;2;205;215;155m%}"     # RGB 205,215,155
-# path="%{\e[38;2;230;180;90m%}"
-# git="%{\e[38;2;90;230;195m%}"
 
 normal="%f%k"                     # reset warna
 white="%F{white}"                 # putih
@@ -96,55 +80,7 @@ function is_root(){
 
 setopt PROMPT_SUBST
 PS1="${user}  \$(is_root) ${white}:: ${dir}  %2~/ ${white}:: ${git} \$(get_git_branch) ${normal}> "
-# PS1="${white}┌[${user}  \$(is_root) ${white}][ ${dir}  %2~/ ${white}][ ${git} \$(get_git_branch) ${white}]
-# └>${normal} "
 
 # Custom Function
-
-function start { sudo systemctl start $1 }
-function status { sudo systemctl status $1 }
-function stop { sudo systemctl stop $1 }
-function restart { sudo systemctl restart $1 }
-function enable { sudo systemctl enable $1 }
-function disable { sudo systemctl disable $1 }
-function ustart { systemctl --user start $1 }
-function ustatus { systemctl --user status $1 }
-function ustop { systemctl --user stop $1 }
-function urestart { systemctl --user restart $1 }
-function uenable { systemctl --user enable $1 }
-function udisable { systemctl --user disable $1 }
-
-function record() {
-  $HOME/Videos/record.sh
-}
-
-function coding() {
-  coding_dir="$HOME/BAKHTIAR/source-code/"
-  coding_selected_raw=$(find "$coding_dir" -maxdepth 1 -mindepth 1 -type d | fzf --height 40% --reverse --print-query)
-
-  query=$(echo "$coding_selected_raw" | sed -n '1p')
-  selected=$(echo "$coding_selected_raw" | sed -n '2p')  
-
-  
-  if [[ -d "$selected" && -n "$selected" ]]; then
-    tmux new-session -A -c "$selected" "nvim ."
-  elif [[ "$query" != "" ]]; then
-    mkdir "$coding_dir/$query" && tmux new-session -A -c "$selected" \; send-keys "nvim ." C-m 
-  else
-    cd "$coding_dir"
-  fi
-}
-
-function yd() {
-  yt-dlp -S vcodec:avc,res:720,ext:mp4 $1 --cookies-from-browser chromium:$HOME/.local/share/qutebrowser --js-runtime node -o "/mnt/windows/Videos/Youtube/%(title)s.%(ext)s"
-  # yt-dlp -S vcodec:avc,res:720,ext:mp4 $1 --cookies-from-browser firefox:$HOME/.mozilla/firefox/ --js-runtime node -o "$HOME/Videos/Youtube/%(title)s.%(ext)s"
-}
-
-function btw() {
-  echo "Setting Boot To Windows ( BTW ) Next"
-  sleep 2
-  sudo efibootmgr -n 0000
-  sleep 1
-  echo "Succes..., Time to BTW (Boot To Windows)"
-}
+source $HOME/.dotfiles/personal/zsh/custom-script.sh
 

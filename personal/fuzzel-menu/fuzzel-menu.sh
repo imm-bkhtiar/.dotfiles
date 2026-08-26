@@ -24,6 +24,7 @@ if [[ $selected != "" && $1 != "Music" ]]; then
   mpv "$rodir/$selected"
 elif [[ $selected != "" && $1 == "Music" ]]; then
   systemctl --user start mpd
+  mpc update
   mpc clear
   mpc add "$selected"
   mpc play

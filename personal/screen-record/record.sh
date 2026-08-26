@@ -47,8 +47,8 @@
 
 case $XDG_SESSION_TYPE in
   "wayland")
-    pkill wayvibes
-    pkill mouseClickyWayland.sh
+    pkill -f "wayvibes"
+    pkill -f "mouseClickyWayland.sh"
 
     sleep 0.5
     wayvibes $HOME/.local/wayvibes/soundpacks/cherrymx-red-abs --background 
@@ -58,11 +58,11 @@ case $XDG_SESSION_TYPE in
       --audio=alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
       --codec=libx264 \
       --pixel-format=yuv420p \
-      --file=$HOME/Videos/screen_record/wf-$(date +%Y_%m_%d_%H_%M).mkv \
+      --file=/mnt/windows/Videos/Screen_Record/wf-$(date +%Y_%m_%d_%H_%M).mkv \
       --params="preset=ultrafast,crf=23,profile:v=main,level:v=4.0,b:v=8000k,bufsize=8000k"
 
-    pkill wayvibes
-    pkill mouseClickyWayland.sh
+    pkill -f "wayvibes"
+    pkill -f "mouseClickyWayland.sh"
   ;;
   "x11") 
     pkill mouseClicky.sh

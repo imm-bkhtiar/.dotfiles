@@ -7,9 +7,8 @@
   "margin-left": 10,
 
   "modules-left": [
-    "sway/workspaces",
-    "group/mpd",
-    "sway/window"
+    "group/leftFirst",
+    "group/mpdController",
   ],
 
   "modules-center": [
@@ -23,9 +22,43 @@
     "battery",
     "backlight",
     "pulseaudio",
-    "clock",
-    "tray",
+    "group/rightFirst",
   ],
+
+
+  "group/rightFirst": {
+    "orientation": "horizontal",
+    "name" : "rightFirst",
+    "modules": [
+      "clock",
+      "tray",
+    ]
+  },
+
+  "group/rightSecond": {
+    "orientation": "horizontal",
+    "name" : "rightSecond",
+    "modules": [
+    ]
+  },
+
+  "group/leftFirst" : {
+    "orientation": "horizontal",
+    "name" : "leftFirst",
+    "modules": [
+      "sway/workspaces",
+      "sway/window",
+    ]
+  },
+
+
+  "sway/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "focused": ""
+    }
+  },
 
   "sway/workspaces": {
     "format": "{icon}",
@@ -136,8 +169,9 @@
     "tooltip": false
   },
 
-  "group/mpd": {
+  "group/mpdController": {
       "orientation": "horizontal",
+      "name" : "mpdController",
       "modules": [
         "custom/mpd-prev",
         "custom/mpd-toggle",
@@ -177,7 +211,7 @@
     "exec": "~/.config/waybar/mpd-toggle.sh stop",
     "interval" : 1,
     "return-type": "text",
-    "on-click": "systemctl --user stop mpd",
+    "on-click": "mpc clear && systemctl --user stop mpd",
     "tooltip": false
   },
 
