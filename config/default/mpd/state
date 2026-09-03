@@ -1,6 +1,8 @@
 sw_volume: 100
 audio_device_state:1:pulse
-state: stop
+state: play
+current: 5
+time: 114.642
 random: 0
 repeat: 1
 single: 0
@@ -10,4 +12,17 @@ mixrampdb: 0
 mixrampdelay: -1
 lastloadedplaylist: 
 playlist_begin
+0:Bahan_video/bgm/garam_dan_madu_gambus_edited.mp3
+1:Bahan_video/bgm/garam_dan_madu_gambus.mp3
+2:Bahan_video/bgm/Minecraft (128 kbps).mp3
+3:Bahan_video/bgm/y2mate.com - Wii Music  Gaming Background Music HD.mp3
+4:Bahan_video/bgm/_jedagjedug(MP3_160K).mp3
+5:Bahan_video/bgm/DJ I DONT KNOW WHY JEDAG JEDUG FULL BEAT VIRAL TIKTOK TERBARU 2025 DJ KOMANG RIMEX _ I DONT KNOW WHY(MP3_160K).mp3
+6:Bahan_video/sfx/Mouse Click - SFX (320 kbps).mp3
+7:Bahan_video/sfx/y2mate.com - ROBLOX Oof Sound Effect.mp3
+8:Bahan_video/sfx/y2mate.com - SOUND EFFECT  Kaget.mp3
+9:Bahan_video/sfx/y2mate.com - sound effect  tolong.mp3
+10:Bahan_video/sfx/y2mate.com - SOUND effect  Wii.mp3
+11:Bahan_video/sfx/y2mate.com - TEPUK JIDAT  Scene Meme HD.mp3
+12:Bahan_video/sfx/y2mate.com - TYPING ON KEYBOARD SOUND EFFECT.mp3
 playlist_end

@@ -10,7 +10,16 @@ export XDG_CURRENT_DESKTOP=generic
 export XDG_SESSION_TYPE=x11
 # export QT_QPA_PLATFORMTHEME=qt6ct
 
-# window manager
-# exec openbox-sessio3
-# exec sway
-exec dbus-run-session -- i3
+case "$WM" in
+    i3)
+        exec dbus-run-session -- i3
+        ;;
+
+    openbox)
+        exec dbus-run-session -- openbox-session
+        ;;
+
+    bspwm)
+        exec dbus-run-session -- bspwm
+        ;;
+esac
