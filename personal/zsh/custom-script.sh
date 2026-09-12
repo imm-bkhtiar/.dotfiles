@@ -54,5 +54,12 @@ function btw() {
   sleep 2
   sudo efibootmgr -n 0000
   sleep 1
-  echo "Succes..., Time to BTW (Boot To Windows)"
+  echo "Boot To Windows"
+  sleep 1
+  echo "Boot To Windows.."
+  sleep 1
+  echo "Boot To Windows...."
+  sleep 1
+  echo "Boot To Windows......"
+  systemctl reboot
 }

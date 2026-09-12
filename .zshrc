@@ -83,4 +83,4 @@ PS1="${user}  \$(is_root) ${white}:: ${dir}  %2~/ ${white}:: ${git} \$(
 
 # Custom Function
 source $HOME/.dotfiles/personal/zsh/custom-script.sh
-
+$HOME/.dotfiles/personal/zsh/todo.js

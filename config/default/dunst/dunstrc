@@ -36,12 +36,12 @@
     #       and the given value is treated as the maximum height
 
     # Position the notification in the top right corner
-    origin = top-right
+    origin = top-center
 
     # Offset from the origin
     # NOTE: Dunst from version 1.11 and older use this alternative notation
     # offset = 10x50
-    offset = (5,5) 
+    offset = (0,20) 
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -60,7 +60,7 @@
     progress_bar_height = 10
 
     # Set the frame width of the progress bar
-    progress_bar_frame_width = 1
+    progress_bar_frame_width = 1 
 
     # Set the minimum width for the progress bar
     progress_bar_min_width = 100
@@ -69,7 +69,7 @@
     progress_bar_max_width = 300
 
     # Corner radius for the progress bar. 0 disables rounded corners.
-    progress_bar_corner_radius = 0
+    progress_bar_corner_radius = 100
 
     # Define which corners to round when drawing the progress bar. If progress_bar_corner_radius
     # is set to 0 this option will be ignored.
@@ -95,13 +95,13 @@
     # notifications.
     # Set to 0 to disable.
     # If gap_size is greater than 0, this setting will be ignored.
-    separator_height = 2
+    separator_height = 0
 
     # Padding between text and separator.
-    padding = 16
+    padding = 24
 
     # Horizontal padding.
-    horizontal_padding = 16
+    horizontal_padding = 24
     
 
     # Padding between text and icon.
@@ -112,7 +112,7 @@
     frame_width = 2 
 
     # Defines color of the frame around the notification window.
-    frame_color = "#B4BBD4"
+    frame_color = "#7C8CAE"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -248,7 +248,7 @@
     sticky_history = yes
 
     # Maximum amount of notifications kept in history
-    history_length = 20
+    history_length = 2:
 
     ### Misc/Advanced ###
 
@@ -272,7 +272,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0 
+    corner_radius = 20
 
     # Define which corners to round when drawing the window. If the corner radius
     # is set to 0 this option will be ignored.
@@ -342,17 +342,23 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#2D353B"
-    foreground = "#888888"
-    timeout = 10
+    background = "#282A2E"
+    foreground = "#C6CCE5"
+
+
+    # primary = #7C8CAE
+
+    highlight = "#707880"
+    timeout = 3
     # Icon for notifications with low urgency
     default_icon = dialog-information
 
 [urgency_normal]
     background = "#2D353B"
     foreground = "#ffffff"
-    timeout = 10
+    timeout = 3
     override_pause_level = 30
+    highlight = "#707880"
     # Icon for notifications with normal urgency
     default_icon = dialog-information
 
@@ -360,7 +366,7 @@
     background = "#900000"
     foreground = "#ffffff"
     frame_color = "#ff0000"
-    timeout = 5
+    timeout = 3
     override_pause_level = 60
     # Icon for notifications with critical urgency
     default_icon = dialog-warning

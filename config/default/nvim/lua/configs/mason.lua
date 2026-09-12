@@ -12,7 +12,8 @@ require("mason-lspconfig").setup({
     "ts_ls",
     "intelephense",
     "emmet_ls",
-    "tailwindcss"
+    "tailwindcss",
+    "marksman"
   },
 
   ui = {
