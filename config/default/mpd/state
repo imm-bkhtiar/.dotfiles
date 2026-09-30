@@ -1,8 +1,7 @@
 sw_volume: 100
 audio_device_state:1:pulse
-state: play
-current: 12
-time: 153.918
+state: stop
+current: 2
 random: 0
 repeat: 1
 single: 0
@@ -12,18 +11,11 @@ mixrampdb: 0
 mixrampdelay: -1
 lastloadedplaylist: 
 playlist_begin
-0:Anime/Akeboshi - Wind (Instrumental) [Naruto ED].mp3
-1:Anime/Nisekoi OST - Nikuhaku Extended(MP3_160K).mp3
-2:Anime/Black Catcher(MP3_160K).mp3
-3:Anime/Yamiyo(MP3_160K).mp3
-4:Anime/Fly-day Chinatown(MP3_160K).mp3
-5:Anime/Shiawase - Back Number.mp3
-6:Anime/Koiiro(MP3_160K).mp3
-7:Anime/イエスタデイ(MP3_160K).mp3
-8:Anime/Mayonaka no Door〜stay with me Miki Matsubara.mp3
-9:Anime/Suzume (feat. Toaka)(MP3_160K).mp3
-10:Anime/怪獣(MP3_160K).mp3
-11:Anime/Stories (From _Black Clover_)(MP3_160K).mp3
-12:Anime/ARIGATO(MP3_160K).mp3
-13:Anime/Anri - Remember Summer Days (Timely__ Track 11)(MP3_160K).mp3
+0:Youtube/Smooth Criminal (2012 Remaster).mp3
+1:Youtube/Don't Stop 'Til You Get Enough.mp3
+2:Youtube/Beat It.mp3
+3:Youtube/Billie Jean.mp3
+4:Youtube/Human Nature.mp3
+5:Youtube/Thriller.mp3
+6:Youtube/Chicago.mp3
 playlist_end

@@ -49,7 +49,7 @@ case $XDG_SESSION_TYPE in
   "wayland")
     pkill -f "wayvibes"
     pkill -f "mouseClickyWayland.sh"
-
+    #
     sleep 0.5
     wayvibes $HOME/.local/wayvibes/soundpacks/cherrymx-red-abs --background 
     $HOME/.dotfiles/personal/mouse-clicky/mouseClickyWayland.sh &
@@ -68,30 +68,61 @@ case $XDG_SESSION_TYPE in
     pkill mouseClicky.sh
     pkill mechvibes
 
-    sleep 0.5 
-    mechvibes &
+    # sleep 0.5 
+    rustyvibes $HOME/.local/wayvibes/soundpacks/cherrymx-red-abs &
     $HOME/.dotfiles/personal/mouse-clicky/mouseClicky.sh &
     
     # CPU Recording ------------
     ffmpeg -thread_queue_size 1024 \
       -f x11grab -s 1366x768 -framerate 30 -i :0.0 \
-      -f pulse -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
+      -f pulse -i bluez_output.41_42_20_43_E8_BB.1.monitor \
+      -f pulse -i alsa_input.hw_1_0 \
+      -filter_complex "[1:a]volume=0.5[a1];[2:a]volume=1.5[a2];[a1][a2]amix[aout]" \
+      -map 0:v -map "[aout]" \
       -c:v libx264 -preset ultrafast -b:v 5000k -bufsize 5000k -crf 23 \
       -profile:v main -level 4.0 -pix_fmt yuv420p \
       -movflags +faststart \
       -c:a aac -b:a 128k -ac 1 \
-      $HOME/Videos/screen_record/ffmpeg-$(date +%Y_%m_%d_%H_%M).mkv
+      /mnt/windows/Videos/Screen_Record/ffmpeg-$(date +%Y_%m_%d_%H_%M).mkv    
+
+    # -------------- Webcam ------------------
+    ffmpeg \
+      -hwaccel vaapi \
+      -f v4l2 \
+      -input_format mjpeg \
+      -video_size 1280x720 \
+      -framerate 30 \
+      -i /dev/video2 \
+      -vf 'format=nv12,hwupload' \
+      -c:v h264_vaapi -qp 20 -preset ultrafast -g 30 -bf 0 \
+      -b:v 5M \
+      webcam.mp4
+
+
+
+    # -f v4l2 -s 640x480 -framerate 30 -i /dev/video0 \
+    # -filter_complex \
+    # "[2:a]volume=1[a1]; \
+    #  [3:a]volume=7.5[a2]; \
+    #  [0:v]setpts=PTS-STARTPTS[cam]; \
+    #  [1:v]setpts=PTS-STARTPTS[screen]; \
+    #  [a1][a2]amix=inputs=2[aout]; \
+    #  [screen][cam]overlay=W-w-20:H-h-20[outv]" \
+    # -map "[outv]" \
+    # -map "[aout]" \
+    # -f pulse -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
+      # -f pulse -i alsa_input.hw_1_0 \
 
     # GPU Recording ------------
     # ffmpeg -vaapi_device /dev/dri/renderD128 -thread_queue_size 1024 \
     #   -f x11grab -s 1366x768 -framerate 30 -i :0.0 \
-    #   -f pulse -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
+    #   -f pulse -i bluez_output.41_42_20_43_E8_BB.1.monitor \
     #   -vf 'format=nv12,hwupload' \
-    #   -c:v h264_vaapi -qp 28 -preset ultrafast -g 30 -bf 0 \
+    #   -c:v h264_vaapi -qp 20 -preset ultrafast -g 30 -bf 0 \
     #   -c:a aac -b:a 128k -ar 48000 -ac 1 \
-    #   $HOME/Videos/screen_record/ffmpeg-gpu-$(date +%Y_%m_%d_%H_%M).mkv
+    #   /mnt/windows/Videos/Screen_Record/ffmpeg-gpu-$(date +%Y_%m_%d_%H_%M).mkv
 
-    pkill mechvibes
+    pkill rustyvibes 
     pkill mouseClicky
   ;;
   * )

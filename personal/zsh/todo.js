@@ -2,9 +2,11 @@
 
 const TODO = `${process.env.HOME}/BAKHTIAR/note/todo.md`;
 
-const TODAY = new Date()
-    .toISOString()
-    .slice(0, 10);
+const now = new Date();
+const TODAY =
+    `${now.getFullYear()}-` +
+    `${String(now.getMonth() + 1).padStart(2, "0")}-` +
+    `${String(now.getDate()).padStart(2, "0")}`;
 
 function showProgress(tasks) {
     const total = tasks.length;
@@ -37,28 +39,37 @@ let foundToday = false;
 const sections = [];
 let currentSection = null;
 
+
 for (const line of lines) {
-    if (line === `# ${TODAY}`) {
-        foundToday = true;
-        continue;
-    }
+    // if (line == `# ${TODAY}`) {
+    //     foundToday = true;
+    //     continue;
+    // }
 
-    if ( foundToday && /^# \d{4}-\d{2}-\d{2}$/.test(line)) {
-        break;
-    }
+    // if ( foundToday && /^# \d{4}-\d{2}-\d{2}$/.test(line)) {
+    //     break;
+    // }
 
-    if (!foundToday) {
-        continue;
-    }
+    // if (!foundToday) {
+    //     continue;
+    // }
 
     if (line.startsWith("## ")) {
         currentSection = {
             title: line,
-            tasks: []
+            tasks: [],
+            notes : []
         };
+
+
         sections.push(currentSection);
         continue;
     }
+
+    if (line.startsWith("> ")) {
+      currentSection.notes.push(line) 
+    }
+
 
     if ( currentSection && /^- \[[ xX]\]/.test(line)) {
         currentSection.tasks.push(line);
@@ -82,15 +93,26 @@ console.log();
 
 for (const section of sections) {
 
-    console.log(section.title);
+    if (section.tasks.length !== 0 ) {
+      console.log(section.title);
+    }
 
     showProgress(section.tasks);
+
 
     for (const task of section.tasks) {
         console.log(task);
     }
 
-    console.log();
+    // console.log();
+    for (const note of section.notes) {
+        // console.log(note);
+    }
+
+    if (section.tasks.length !== 0 ) {
+      console.log();
+    }
 }
+
 
 console.log("------------------------------------------");

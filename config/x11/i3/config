@@ -72,16 +72,17 @@ bindsym $mod+s exec $HOME/.dotfiles/personal/rofi-menu/rofi-menu.sh "Series"
 bindsym $mod+e exec dolphin
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+s exec flameshot gui
+bindsym $mod+Shift+w exec $HOME/.dotfiles/personal/screen-record/onCam.sh
 bindsym $mod+Return exec --no-startup-id $term
 bindsym $mod+n exec $HOME/.config/rofi/modules/noteMenu/noteMenu.sh
 bindsym $mod+c exec $HOME/.config/rofi/modules/configMenu/configMenu.sh
 
 # Brightness and Volume settings
-bindsym Mod1+Up exec --no-startup-id $HOME/battery-allert.sh "volume" "up"
-bindsym Mod1+Down exec --no-startup-id $HOME/battery-allert.sh "volume" "down" 
+bindsym Mod1+Up exec --no-startup-id $HOME/.dotfiles/personal/dunstAction.sh "volume" "up"
+bindsym Mod1+Down exec --no-startup-id $HOME/.dotfiles/personal/dunstAction.sh "volume" "down" 
 # bindsym Mod1+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym Mod1+Right exec --no-startup-id $HOME/battery-allert.sh "brightness" "up" 
-bindsym Mod1+Left exec --no-startup-id $HOME/battery-allert.sh "brightness" "down" 
+bindsym Mod1+Right exec --no-startup-id $HOME/.dotfiles/personal/dunstAction.sh "brightness" "up" 
+bindsym Mod1+Left exec --no-startup-id $HOME/.dotfiles/personal/dunstAction.sh "brightness" "down" 
 bindsym Mod1+h exec --no-startup-id mpc seek -10
 bindsym Mod1+l exec --no-startup-id mpc seek +10
 bindsym Mod1+p exec --no-startup-id mpc prev
@@ -176,6 +177,7 @@ for_window [class="qBittorrent" title="^(?!qBit).*"] floating enable, border pix
 for_window [class="Thunar" title="File Operation Progress"] floating enable, sticky enable, move absolute position 10 px 10 px, border pixel 2
 for_window [class="firefox" title="Library"] sticky enable, move absolute position 10 px 10 px, border pixel 2
 for_window [class="mpv"] floating enable, resize set width 1200 px height 700 px, move position center
+for_window [class="mpv" title="webcam"] floating enable, sticky enable, resize set height 200 px, move position 1092 px 10 px, border pixel 2  
 for_window [class="mpv" title="private"] floating enable, resize set height 150 px, move position center
 for_window [class="^.*"] border pixel 2.5 
 for_window [class="kitty" title="MyNote"] floating enable, resize set width 1000 px height 500 px, move position center

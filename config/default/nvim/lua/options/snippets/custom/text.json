@@ -1,0 +1,15 @@
+{
+  "salam": {
+    "prefix": "salam",
+    "body": [
+      "Assalamualaikum Wr. Wb.",
+      "Nama saya Bakhtiar, izin menjawab diskusi pada sesi ${1} ini.",
+      "",
+      "${2}",
+      "",
+      "sekian pendapat saya pada diskusi sesi ${1} ini",
+      "Terima kasih..",
+      "Wassalamualaikum Wr. Wb."
+    ]
+  }
+}

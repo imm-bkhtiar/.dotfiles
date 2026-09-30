@@ -54,6 +54,7 @@ alias shutdown="systemctl poweroff"
 alias reboot="systemctl reboot"
 alias logout="i3-msg exit"
 alias scrcpy="scrcpy --video-encoder=OMX.google.h264.encoder"
+alias todo=$HOME/.dotfiles/personal/zsh/todo.js
 
 normal="%f%k"                     # reset warna
 white="%F{white}"                 # putih
