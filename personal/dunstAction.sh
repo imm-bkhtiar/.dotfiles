@@ -7,21 +7,21 @@ NOTIFY_ID=9912
 case "$2" in
     up)
         if [[ $1 == "volume" ]]; then
-          pactl set-sink-volume "$SINK" "+${STEP}%"
+          wpctl set-volume "$SINK" "${STEP}%+" --limit 1.0
         else
           brightnessctl set +5%
         fi
         ;;
     down)
         if [[ $1 == "volume" ]]; then
-          pactl set-sink-volume "$SINK" "-${STEP}%"
+          wpctl set-volume "$SINK" "${STEP}%-" --limit 1.0
         else
           brightnessctl set 5%-
         fi
         ;;
     mute)
         if [[ $1 == "volume" ]]; then
-          pactl set-sink-mute "$SINK" toggle
+          pactl set-mute "$SINK" toggle
         fi
         ;;
     *)
