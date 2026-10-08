@@ -63,7 +63,7 @@ set $ws10 "10"
 
 # ========== Keybind  ==========
 bindsym $mod+x exec --no-startup-id $HOME/.config/i3/polybarSwitch.sh "toggle-power" 
-bindsym Mod1+m exec --no-startup-id $HOME/.config/i3/polybarSwitch.sh "toggle-mode"
+bindsym $mod+Shift+m exec --no-startup-id $HOME/.config/i3/polybarSwitch.sh "toggle-mode"
 bindsym $mod+y exec $HOME/.dotfiles/personal/rofi-menu/rofi-menu.sh "Youtube"
 bindsym $mod+m exec $HOME/.dotfiles/personal/rofi-menu/rofi-menu.sh "Music"
 bindsym $mod+a exec $HOME/.dotfiles/personal/rofi-menu/rofi-menu.sh "Anime"
@@ -72,15 +72,16 @@ bindsym $mod+s exec $HOME/.dotfiles/personal/rofi-menu/rofi-menu.sh "Series"
 bindsym $mod+e exec dolphin
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+s exec flameshot gui
-bindsym $mod+Shift+w exec $HOME/.dotfiles/personal/screen-record/onCam.sh
+bindsym $mod+Shift+w exec --no-startup-id $HOME/.dotfiles/personal/screen-record/onCam.sh
+bindsym Mod1+r exec --no-startup-id $HOME/.dotfiles/personal/screen-record/record.sh
 bindsym $mod+Return exec --no-startup-id $term
 bindsym $mod+n exec $HOME/.config/rofi/modules/noteMenu/noteMenu.sh
 bindsym $mod+c exec $HOME/.config/rofi/modules/configMenu/configMenu.sh
 
 # Brightness and Volume settings
 bindsym Mod1+Up exec --no-startup-id $HOME/.dotfiles/personal/dunstAction.sh "volume" "up"
-bindsym Mod1+Down exec --no-startup-id $HOME/.dotfiles/personal/dunstAction.sh "volume" "down" 
-# bindsym Mod1+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym Mod1+Down exec --no-startup-id $HOME/.dotfiles/personal/dunstAction.sh "volume" "down"
+bindsym Mod1+m exec --no-startup-id $HOME/.dotfiles/personal/dunstAction.sh "volume" "mute"
 bindsym Mod1+Right exec --no-startup-id $HOME/.dotfiles/personal/dunstAction.sh "brightness" "up" 
 bindsym Mod1+Left exec --no-startup-id $HOME/.dotfiles/personal/dunstAction.sh "brightness" "down" 
 bindsym Mod1+h exec --no-startup-id mpc seek -10

@@ -13,10 +13,6 @@ function urestart { systemctl --user restart $1 }
 function uenable { systemctl --user enable $1 }
 function udisable { systemctl --user disable $1 }
 
-function record() {
-  $HOME/Videos/record.sh
-}
-
 function coding() {
   coding_dir="$HOME/BAKHTIAR/source-code/"
   coding_selected_raw=$(find "$coding_dir" -maxdepth 1 -mindepth 1 -type d | fzf --height 40% --reverse --print-query)
@@ -35,6 +31,10 @@ function coding() {
 }
 
 function yd() {
+  if [[ $2 != "" ]]; then
+    yt-dlp -S vcodec:avc,res:720,ext:mp4 $1 --cookies-from-browser chromium:$HOME/.local/share/qutebrowser --js-runtime node -o "$2%(title)s.%(ext)s"
+    return 0
+  fi
   yt-dlp -S vcodec:avc,res:720,ext:mp4 $1 --cookies-from-browser chromium:$HOME/.local/share/qutebrowser --js-runtime node -o "/mnt/windows/Videos/Youtube/%(title)s.%(ext)s"
   # yt-dlp -S vcodec:avc,res:720,ext:mp4 $1 --cookies-from-browser firefox:$HOME/.mozilla/firefox/ --js-runtime node -o "$HOME/Videos/Youtube/%(title)s.%(ext)s"
 }

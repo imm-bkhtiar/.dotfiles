@@ -48,6 +48,7 @@ alias ll="ls -shl"
 
 # Alias Section
 alias codir="cd $HOME/BAKHTIAR/source-code/ && cd $1"
+alias tuton="cd /mnt/windows/immbkhtiar/Documents/UT/ && cd $1"
 alias app="cd $HOME/BAKHTIAR/Apps/portable/"
 alias update="sudo apt update && sudo apt upgrade"
 alias shutdown="systemctl poweroff"

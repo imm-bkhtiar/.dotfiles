@@ -21,7 +21,7 @@ case "$2" in
         ;;
     mute)
         if [[ $1 == "volume" ]]; then
-          pactl set-mute "$SINK" toggle
+          wpctl set-mute "$SINK" toggle
         fi
         ;;
     *)
